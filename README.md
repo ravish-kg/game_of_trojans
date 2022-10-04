@@ -1,6 +1,10 @@
-# game_of_trojans
+# Game Of Trojans
 
 MAZE Number Puzzle Game Project
+
+# Game Link
+
+https://play.unity.com/mg/other/mazenumberpuzzle
 
 # Team
 
