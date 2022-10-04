@@ -2,7 +2,7 @@
 
 MAZE Number Puzzle Game Project
 
-# Collaborators
+# Team
 
 Santhosh Baradwaj Vaduvur Ranganathan (Captain): PM vaduvurr@usc.edu
 Koushik Mani: koushikm@usc.edu
