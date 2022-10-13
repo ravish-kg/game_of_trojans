@@ -1,0 +1,39 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="GameOver">
+			<method name="home"/>
+			<method name="home"/>
+			<method name="home"/>
+			<method name="home"/>
+			<method name="home"/>
+			<method name="Restart"/>
+			<method name="Restart"/>
+			<method name="Restart"/>
+			<method name="Restart"/>
+			<method name="Restart"/>
+		</type>
+		<type fullname="InstructionScript">
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+		</type>
+		<type fullname="MainMenu">
+			<method name="PlayGame"/>
+		</type>
+		<type fullname="QuitGame">
+			<method name="btn_change_scene"/>
+			<method name="btn_change_scene"/>
+		</type>
+		<type fullname="TutorialLevel3">
+			<method name="render_scene"/>
+		</type>
+		<type fullname="TutorialManager">
+			<method name="incrementIndex"/>
+			<method name="render_scene"/>
+		</type>
+	</assembly>
+</linker>
