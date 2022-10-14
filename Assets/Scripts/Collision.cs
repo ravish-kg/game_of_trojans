@@ -33,6 +33,7 @@ public class Collision : MonoBehaviour
     public TIMER_COLOR blockType;
     public GameObject blockUI;
     public GameObject emptyBlock;
+    public Image blockFill;
 
     // Start is called before the first frame update
     void Start() {
@@ -53,11 +54,13 @@ public class Collision : MonoBehaviour
 
         if(Time.time > time) {
             c = gameObject.GetComponent<SpriteRenderer>();
-            if(c.color == red) {
-                c.color = orange;
+            if(blockType == TIMER_COLOR.RED) {
+                blockType = TIMER_COLOR.ORANGE;
+                blockFill.color = orange;
             } 
-            else if(c.color == orange) {
-                c.color = yellow;
+            else if(blockType == TIMER_COLOR.ORANGE) {
+                blockType = TIMER_COLOR.YELLOW;
+                blockFill.color = yellow;
             }
             time = Time.time + gap;
         }

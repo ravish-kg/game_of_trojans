@@ -793,6 +793,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 871214335}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: blockFill
+      value: 
+      objectReference: {fileID: 1731145039}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: blockType
       value: 1
       objectReference: {fileID: 0}
@@ -1168,6 +1172,7 @@ MonoBehaviour:
   uiText: {fileID: 772377498}
   blockType: 2
   remainingDuration: 0
+  defaultDuration: 25
 --- !u!114 &481594160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,6 +1584,7 @@ MonoBehaviour:
   uiText: {fileID: 1772346792}
   blockType: 1
   remainingDuration: 0
+  defaultDuration: 15
 --- !u!114 &871214338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,6 +2159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 481594157}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: blockFill
+      value: 
+      objectReference: {fileID: 668475533}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: blockType
       value: 2
       objectReference: {fileID: 0}
@@ -2248,6 +2258,7 @@ MonoBehaviour:
   uiText: {fileID: 1412890559}
   blockType: 0
   remainingDuration: 0
+  defaultDuration: 20
 --- !u!114 &1037320716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,6 +2486,7 @@ MonoBehaviour:
   uiText: {fileID: 237082407}
   blockType: 2
   remainingDuration: 0
+  defaultDuration: 25
 --- !u!1 &1164021231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,6 +2951,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1148233943}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: blockFill
+      value: 
+      objectReference: {fileID: 205345724}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: blockType
       value: 2
       objectReference: {fileID: 0}
@@ -3073,6 +3089,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1375131990}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: blockFill
+      value: 
+      objectReference: {fileID: 927759182}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: blockType
       value: 1
       objectReference: {fileID: 0}
@@ -3168,6 +3188,7 @@ MonoBehaviour:
   uiText: {fileID: 1434152754}
   blockType: 1
   remainingDuration: 0
+  defaultDuration: 25
 --- !u!114 &1375131993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3422,6 +3443,10 @@ PrefabInstance:
       propertyPath: blockUI
       value: 
       objectReference: {fileID: 1037320713}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: blockFill
+      value: 
+      objectReference: {fileID: 596592242}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: emptyBlock
       value: 

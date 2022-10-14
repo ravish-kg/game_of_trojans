@@ -29,9 +29,11 @@ public class ClockTimer : MonoBehaviour
 
     public int remainingDuration;
 
-    // private void Awake() {
-    //   ResetTimer();
-    // }  
+    public int defaultDuration = 10;
+
+    private void Awake() {
+      ResetTimer();
+    }  
 
     private void ResetTimer() {
         uiText.text = "00" ;
@@ -68,15 +70,15 @@ public class ClockTimer : MonoBehaviour
         switch (blockType)
         {
             case TIMER_COLOR.RED:
-                Duration = remainingDuration = 10;
+                Duration = remainingDuration = defaultDuration;
                 uiFillImage.color = red;
                 break;
             case TIMER_COLOR.ORANGE:
-                Duration = remainingDuration = 20;
+                Duration = remainingDuration = defaultDuration;
                 uiFillImage.color = orange;
                 break;
             case TIMER_COLOR.YELLOW:
-                Duration = remainingDuration = 30;
+                Duration = remainingDuration = defaultDuration;
                 uiFillImage.color = yellow;
                 break;
         }
