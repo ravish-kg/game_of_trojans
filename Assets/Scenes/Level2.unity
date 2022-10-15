@@ -1413,7 +1413,7 @@ MonoBehaviour:
   startTime1: 12
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1848381704}
 --- !u!1 &346411114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,7 +2039,7 @@ MonoBehaviour:
   startTime1: 25
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1624768945}
 --- !u!1 &548340098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3246,7 @@ MonoBehaviour:
   startTime1: 25
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1995426758}
 --- !u!1 &802478667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,7 +3344,7 @@ MonoBehaviour:
   startTime1: 15
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 2069902095}
 --- !u!1 &964865656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,7 +3499,7 @@ MonoBehaviour:
   startTime1: 20
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1195528161}
 --- !u!1 &972238071
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,7 +4744,7 @@ MonoBehaviour:
   startTime1: 15
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1004282338}
 --- !u!1 &1292025708
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,7 +8153,7 @@ MonoBehaviour:
   startTime1: 15
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 375790154}
 --- !u!1 &1995426756
 GameObject:
   m_ObjectHideFlags: 0
@@ -8388,7 +8388,7 @@ MonoBehaviour:
   startTime1: 15
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 2015786415}
 --- !u!1 &2015786413
 GameObject:
   m_ObjectHideFlags: 0
@@ -8830,7 +8830,7 @@ MonoBehaviour:
   startTime1: 15
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1821691915}
 --- !u!1 &2104131958
 GameObject:
   m_ObjectHideFlags: 0

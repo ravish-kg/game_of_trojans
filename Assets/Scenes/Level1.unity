@@ -835,7 +835,7 @@ MonoBehaviour:
   startTime1: 15
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1772346792}
 --- !u!1 &427784977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,7 +2202,7 @@ MonoBehaviour:
   startTime1: 25
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 772377498}
 --- !u!1 &1037320713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   startTime1: 25
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 237082407}
 --- !u!1001 &1259213028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3134,7 +3134,7 @@ MonoBehaviour:
   startTime1: 25
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1434152754}
 --- !u!1 &1375131990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,7 +3486,7 @@ MonoBehaviour:
   startTime1: 20
   hollowNumber: {fileID: 0}
   mazeChangeText: {fileID: 0}
-  remainingDuration: {fileID: 0}
+  remainingDuration: {fileID: 1412890559}
 --- !u!1 &1412890557
 GameObject:
   m_ObjectHideFlags: 0
