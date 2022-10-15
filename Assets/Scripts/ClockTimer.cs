@@ -91,6 +91,7 @@ public class ClockTimer : MonoBehaviour
 
     private IEnumerator UpdateTimer() {
         while(remainingDuration > 0) {
+            remainingDuration = int.Parse(uiText.text);
             UpdateUI(remainingDuration);
             remainingDuration--;
             yield return new WaitForSeconds(1f);
