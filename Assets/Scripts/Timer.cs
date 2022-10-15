@@ -7,18 +7,23 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public static float currentTime;
-    public float startingTime = 30f;
+    public static float cTime = 0f;
+    public static float sTime = 0f;
+    public static float startingTime = 30f;
     [SerializeField] Text countdownText;
     public GameObject MazeChangeText;
 
     void Start()
     {
-        currentTime = startingTime;
+        currentTime = startingTime + GameOver.timeCarryOver;
+        sTime = startingTime + GameOver.timeCarryOver;
+        GameOver.timeCarryOver = 0f;
     }
 
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
+        cTime = currentTime;
         //Debug.Log("current time is " + currentTime);
         countdownText.text = "Timer: " + currentTime.ToString("0");
 

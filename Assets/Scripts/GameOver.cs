@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
+    public static float timeCarryOver = 0f;
+    public static bool carryOverFlag = false;
+
     public GameObject gameOverPanel;
     public Text equation_panel;
     public Text threshold_panel;
@@ -19,10 +22,11 @@ public class GameOver : MonoBehaviour
     void Awake(){
         // Debug.Log("Awake");
         gameOverPanel.SetActive(false);
+        
     }
 
     void Start() {
-        
+        carryOverFlag = true;
     }
 
     // Update is called once per frame
@@ -32,6 +36,15 @@ public class GameOver : MonoBehaviour
             if(scoreCalc.score >= int.Parse(Collision.threshold)) {
                 gameOver.text = "Success! Level complete!";
                 equation_panel.text = "Equation: " + Collision.math_eq;
+
+                if(carryOverFlag){
+                    timeCarryOver = Timer.sTime - Timer.cTime;
+                    if(timeCarryOver <= 0){
+                        timeCarryOver = 0f;
+                    }
+                    Debug.Log("Time Carry Over : " + timeCarryOver);
+                    carryOverFlag = false;
+                }
             }
             else {
                 IEnumerator Post(string gameo, string objectd){
@@ -69,6 +82,8 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         scoreCalc.score = 0;
         Collision.count = 0;
+        timeCarryOver = 0f;
+        carryOverFlag = false;
     }
 
     public void home() {
@@ -76,5 +91,22 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Collision.count = 0;
         scoreCalc.score = 0;
+        timeCarryOver = 0f;
+        carryOverFlag = false;
     }
+
+    public void loadLevel2(){
+        
+        SceneManager.LoadScene("Level2");
+        scoreCalc.score = 0;
+        Collision.count = 0;
+        
+    }
+
+    public void loadLevel3(){
+        SceneManager.LoadScene("Level3");
+        scoreCalc.score = 0;
+        Collision.count = 0;
+    }
+
 }

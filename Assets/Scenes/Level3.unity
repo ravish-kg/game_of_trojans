@@ -4998,7 +4998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc41a3f4e6b04ea48b0675da40a1f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 30
   countdownText: {fileID: 664410745}
   MazeChangeText: {fileID: 917901656}
 --- !u!1 &1178988382
@@ -12929,6 +12928,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6247862865486486306, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865486486306, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -275
+      objectReference: {fileID: 0}
     - target: {fileID: 6247862865486486309, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -12936,6 +12943,14 @@ PrefabInstance:
     - target: {fileID: 6247862865486486309, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 759.1575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -43.895138
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
