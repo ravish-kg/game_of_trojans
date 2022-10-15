@@ -13,41 +13,49 @@ public class CountdownTimer : MonoBehaviour
     // [SerializeField] Text countdownText1;
     public GameObject mazeChangeText;
 
+    [SerializeField] Text remainingDuration;
+
     void Start() {
         currentTime1 = startTime1;
     }
 
     // Update is called once per frame
     void Update() {
-        if (mazeChangeText)
-        {
-            if (Timer.currentTime.ToString("0").Equals("20"))
-            {
-                currentTime1 = currentTime1 + (5 * Time.deltaTime);
-            }
-        }
-
-        // if(countdownText1 != null) {
-        //     currentTime1 -= 1 * Time.deltaTime;
-        //     countdownText1.text = currentTime1.ToString("0");
-
-        //     if (mazeChangeText)
+        // if (mazeChangeText)
+        // {
+        //     if (Timer.currentTime.ToString("0").Equals("20"))
         //     {
-        //         if (Timer.currentTime.ToString("0").Equals("20"))
-        //         {
-        //             currentTime1 = currentTime1 + (5 * Time.deltaTime);
-        //         }
-        //     }
-            
+        //         currentTime1 = currentTime1 + (5 * Time.deltaTime);
+        //         int curr = int.Parse(remainingDuration.text);
+        //         curr = curr + 5;
 
-        //     // Debug.Log("current time="+countdownText.text);
-        //     if(currentTime1 <= 0) {
-        //         currentTime1 = 0;  
-        //         countdownText1.text = ""; 
-        //         Destroy(countdownText1.gameObject); 
-        //         Destroy(gameObject);
+        //         Debug.Log(curr);
+
+        //         remainingDuration.text = curr + "";
         //     }
         // }
+
+        if(remainingDuration != null) {
+            currentTime1 -= 1 * Time.deltaTime;
+            remainingDuration.text = currentTime1.ToString("0");
+
+            if (mazeChangeText)
+            {
+                if (Timer.currentTime.ToString("0").Equals("20"))
+                {
+                    currentTime1 = currentTime1 + (5 * Time.deltaTime);
+                }
+            }
+            
+
+            // Debug.Log("current time="+countdownText.text);
+            // if(currentTime1 <= 0) {
+            //     currentTime1 = 0;  
+            //     remainingDuration.text = ""; 
+            //     Destroy(remainingDuration.gameObject); 
+            //     Destroy(gameObject);
+            // }
+        }
         // if(Collision.count == 3) {
         //     Destroy(countdownText1.gameObject);
         //     Destroy(gameObject);
