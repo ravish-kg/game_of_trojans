@@ -13,6 +13,7 @@ public class GameOver : MonoBehaviour
     public Text equation_panel;
     public Text threshold_panel;
     public Text score_panel;
+    public static int entry_restart_condition;
     public Text gameOver;
     private string Gameo;
     private string objectd;
@@ -79,6 +80,9 @@ public class GameOver : MonoBehaviour
 
     public void Restart() {
         gameOverPanel.SetActive(false);
+        GameOpener.panel_counter = 0;
+        entry_restart_condition = 1;
+        NewTimer.exit_condition = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         scoreCalc.score = 0;
         Collision.count = 0;
@@ -88,6 +92,8 @@ public class GameOver : MonoBehaviour
 
     public void home() {
         gameOverPanel.SetActive(false);
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Menu");
         Collision.count = 0;
         scoreCalc.score = 0;
@@ -96,7 +102,8 @@ public class GameOver : MonoBehaviour
     }
 
     public void loadLevel2(){
-        
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level2");
         scoreCalc.score = 0;
         Collision.count = 0;
@@ -104,6 +111,8 @@ public class GameOver : MonoBehaviour
     }
 
     public void loadLevel3(){
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level3");
         scoreCalc.score = 0;
         Collision.count = 0;

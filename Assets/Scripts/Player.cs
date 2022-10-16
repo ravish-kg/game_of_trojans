@@ -16,42 +16,49 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        // if(Input.GetKey(KeyCode.LeftArrow)){
-        //     transform.Translate(-speed*Time.deltaTime,0,0);
-        // }
-        // else if(Input.GetKey(KeyCode.RightArrow)){
-        //     transform.Translate(speed*Time.deltaTime,0,0);
-        // }
-        // else if(Input.GetKey(KeyCode.UpArrow)){
-        //     transform.Translate(0,speed*Time.deltaTime,0);
-        // }
-        // else if(Input.GetKey(KeyCode.DownArrow)){
-        //     transform.Translate(0,-speed*Time.deltaTime,0);
-        // }
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        if(Mathf.Abs(movement.x) > Mathf.Abs(movement.y)) {
-            movement.y = 0;
-        }
-        else {
-            movement.x = 0;
-        }
-
-        movement.Normalize();
-
-        _rigidbody.velocity = movement * speed;
-        direction = Input.GetAxis("Horizontal");
-        if(direction >= 0f)
+        if (NewTimer.exit_condition == 1)
         {
-            transform.localScale = new Vector2(0.05833428f, 0.06382877f);
 
-        } else
-        {
-            transform.localScale = new Vector2(-0.05833428f, 0.06382877f);
+            // if(Input.GetKey(KeyCode.LeftArrow)){
+            //     transform.Translate(-speed*Time.deltaTime,0,0);
+            // }
+            // else if(Input.GetKey(KeyCode.RightArrow)){
+            //     transform.Translate(speed*Time.deltaTime,0,0);
+            // }
+            // else if(Input.GetKey(KeyCode.UpArrow)){
+            //     transform.Translate(0,speed*Time.deltaTime,0);
+            // }
+            // else if(Input.GetKey(KeyCode.DownArrow)){
+            //     transform.Translate(0,-speed*Time.deltaTime,0);
+            // }
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+            {
+                movement.y = 0;
+            }
+            else
+            {
+                movement.x = 0;
+            }
+
+            movement.Normalize();
+
+            _rigidbody.velocity = movement * speed;
+            direction = Input.GetAxis("Horizontal");
+            if (direction >= 0f)
+            {
+                transform.localScale = new Vector2(0.05833428f, 0.06382877f);
+
+            }
+            else
+            {
+                transform.localScale = new Vector2(-0.05833428f, 0.06382877f);
+            }
         }
 
-
+        
     }
 
     // private void OnCollisionEnter2D(Collision2D collision){

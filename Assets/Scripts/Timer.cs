@@ -22,51 +22,54 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
-        cTime = currentTime;
-        //Debug.Log("current time is " + currentTime);
-        countdownText.text = "Timer: " + currentTime.ToString("0");
-
-
-        if (MazeChangeText)
+        if (NewTimer.exit_condition == 1)
         {
+            currentTime -= 1 * Time.deltaTime;
+            cTime = currentTime;
+            //Debug.Log("current time is " + currentTime);
+            countdownText.text = "Timer: " + currentTime.ToString("0");
 
-            if (currentTime.ToString("0") == "20")
-            {
-                MazeChangeText.SetActive(true);
-                MazeChangeText.GetComponent<TMP_InputField>().text = "Maze change in";
-            }
-            else if (currentTime.ToString("0") == "19")
-            {
-                MazeChangeText.SetActive(true);
-                MazeChangeText.GetComponent<TMP_InputField>().text = "3";
-            }
-            else if (currentTime.ToString("0") == "18")
-            {
-                MazeChangeText.SetActive(true);
-                MazeChangeText.GetComponent<TMP_InputField>().text = "2";
-            }
-            else if (currentTime.ToString("0") == "17")
-            {
-                MazeChangeText.SetActive(true);
-                MazeChangeText.GetComponent<TMP_InputField>().text = "1";
-            }
-            
-            else
-            {
-                MazeChangeText.SetActive(false);
-            }
-        }
 
-        
+            if (MazeChangeText)
+            {
 
-        if (currentTime <= 0)
-        {
-            currentTime = 0;
-        }
-        if (Collision.count == 3)
-        {
-            currentTime = Time.deltaTime;
+                if (currentTime.ToString("0") == "20")
+                {
+                    MazeChangeText.SetActive(true);
+                    MazeChangeText.GetComponent<TMP_InputField>().text = "Maze change in";
+                }
+                else if (currentTime.ToString("0") == "19")
+                {
+                    MazeChangeText.SetActive(true);
+                    MazeChangeText.GetComponent<TMP_InputField>().text = "3";
+                }
+                else if (currentTime.ToString("0") == "18")
+                {
+                    MazeChangeText.SetActive(true);
+                    MazeChangeText.GetComponent<TMP_InputField>().text = "2";
+                }
+                else if (currentTime.ToString("0") == "17")
+                {
+                    MazeChangeText.SetActive(true);
+                    MazeChangeText.GetComponent<TMP_InputField>().text = "1";
+                }
+
+                else
+                {
+                    MazeChangeText.SetActive(false);
+                }
+            }
+
+
+
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+            }
+            if (Collision.count == 3)
+            {
+                currentTime = Time.deltaTime;
+            }
         }
     }
 }
