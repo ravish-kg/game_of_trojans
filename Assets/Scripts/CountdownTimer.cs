@@ -44,8 +44,8 @@ public class CountdownTimer : MonoBehaviour
         //         remainingDuration.text = curr + "";
         //     }
         // }
-       
-            if(remainingDuration != null && NewTimer.exit_condition == 1) {
+
+        if(remainingDuration != null && NewTimer.exit_condition == 1) {
             currentTime1 -= 1 * Time.deltaTime;
             remainingDuration.text = currentTime1.ToString("0");
 

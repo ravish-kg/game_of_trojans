@@ -16,7 +16,7 @@ public class GameOpener : MonoBehaviour
         {
 
             Panel.gameObject.SetActive(false);
-            // Timer_Panel.gameObject.SetActive(true);
+            Timer_Panel.gameObject.SetActive(true);
 
 
 

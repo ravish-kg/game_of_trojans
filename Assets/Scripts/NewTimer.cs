@@ -34,7 +34,7 @@ public class NewTimer : MonoBehaviour
 
             // GameOpener.Timer_Panel.SetActive(true);
             currentTime_new -= 1 * Time.deltaTime;
-            // Debug.Log("current time is " + currentTime_new);
+            Debug.Log("current time is " + currentTime_new);
             countdownText_new.text = currentTime_new.ToString("0");
             if (currentTime_new <= 1)
             {
