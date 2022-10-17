@@ -104,7 +104,7 @@ public class GameOver : MonoBehaviour
     public void loadLevel2(){
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level2_tutorial");
         scoreCalc.score = 0;
         Collision.count = 0;
         
@@ -113,7 +113,7 @@ public class GameOver : MonoBehaviour
     public void loadLevel3(){
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level3_tutorial");
         scoreCalc.score = 0;
         Collision.count = 0;
     }

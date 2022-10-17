@@ -74,30 +74,18 @@ public class TutorialManager : MonoBehaviour
         }
 
         if (popUpIndex == 6) {
-            popUps[popUpIndex].SetActive(true);
-            popUps[0].SetActive(false);
-            popUps[1].SetActive(false);
-            popUps[2].SetActive(false);
-            popUps[3].SetActive(false);
-            popUps[4].SetActive(false);
-            popUps[5].SetActive(false);
-        }
-
-        if (popUpIndex == 7) {
+            popUps[6].SetActive(true);
             popUps[7].SetActive(true);
-            popUps[8].SetActive(true);
-            popUps[9].SetActive(true);
             popUps[0].SetActive(false);
             popUps[1].SetActive(false);
             popUps[2].SetActive(false);
             popUps[3].SetActive(false);
             popUps[4].SetActive(false);
             popUps[5].SetActive(false);
-            popUps[6].SetActive(false);
-            popUpIndex = 9;
+            popUpIndex = 7;
         }
 
-        if (popUpIndex == 10) {
+        if (popUpIndex == 8) {
             popUps[popUpIndex].SetActive(true);
             tryItOut.SetActive(true);
             popUps[0].SetActive(false);
@@ -108,8 +96,6 @@ public class TutorialManager : MonoBehaviour
             popUps[5].SetActive(false);
             popUps[6].SetActive(false);
             popUps[7].SetActive(false);
-            popUps[8].SetActive(false);
-            popUps[9].SetActive(false);
             button.SetActive(false);
             Destroy(countDownText1);
             Destroy(countDownText2);
