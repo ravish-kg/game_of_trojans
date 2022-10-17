@@ -31,7 +31,9 @@ public class ClockTimer : MonoBehaviour
 
     public int defaultDuration = 10;
 
+
     private void Awake() {
+
       ResetTimer();
     }  
 

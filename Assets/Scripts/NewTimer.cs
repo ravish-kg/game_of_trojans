@@ -8,8 +8,10 @@ public class NewTimer : MonoBehaviour
     float currentTime_new;
     public static int entry_condition;
     float startingTime_new = 5f;
-    public static int exit_condition;
     [SerializeField] Text countdownText_new;
+    public GameObject timer_test;
+    public static int exit_condition;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +47,10 @@ public class NewTimer : MonoBehaviour
             }
             if (currentTime_new <= 0)
             {
+                
                 currentTime_new = 5f;
                 countdownText_new.gameObject.SetActive(false);
-                // Destroy(GameOpener.Timer_Panel);
+                Destroy(timer_test);
                 exit_condition = 1;
 
             }
@@ -59,4 +62,5 @@ public class NewTimer : MonoBehaviour
         }
 
     }
+
 }
