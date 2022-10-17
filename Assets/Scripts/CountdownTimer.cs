@@ -35,7 +35,7 @@ public class CountdownTimer : MonoBehaviour
         //     }
         // }
 
-        if(remainingDuration != null) {
+        if(remainingDuration != null && NewTimer.exit_condition == 1) {
             currentTime1 -= 1 * Time.deltaTime;
             remainingDuration.text = currentTime1.ToString("0");
 
