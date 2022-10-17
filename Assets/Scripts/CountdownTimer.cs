@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
@@ -11,12 +13,20 @@ public class CountdownTimer : MonoBehaviour
     public GameObject hollowNumber;
     private SpriteRenderer c;
     // [SerializeField] Text countdownText1;
+    //Changes for Level 3
+    [SerializeField] TMP_Text number;
+   
+    public int checkRotation = 0;
+     // end level 3 changes
     public GameObject mazeChangeText;
 
     [SerializeField] Text remainingDuration;
 
     void Start() {
         currentTime1 = startTime1;
+        if(SceneManager.GetActiveScene().name == "Level3") {
+            number = hollowNumber.GetComponent<TMP_Text>();
+        }
     }
 
     // Update is called once per frame
@@ -34,8 +44,8 @@ public class CountdownTimer : MonoBehaviour
         //         remainingDuration.text = curr + "";
         //     }
         // }
-
-        if(remainingDuration != null) {
+       
+            if(remainingDuration != null && NewTimer.exit_condition == 1) {
             currentTime1 -= 1 * Time.deltaTime;
             remainingDuration.text = currentTime1.ToString("0");
 
@@ -60,7 +70,9 @@ public class CountdownTimer : MonoBehaviour
         //     Destroy(countdownText1.gameObject);
         //     Destroy(gameObject);
         // }
-    }
+        }
+        
+    
 
     private void OnTriggerEnter2D(Collider2D col) {
         // if(col.tag == "Player") {

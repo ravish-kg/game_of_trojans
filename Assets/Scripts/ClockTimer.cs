@@ -31,14 +31,18 @@ public class ClockTimer : MonoBehaviour
 
     public int defaultDuration = 10;
 
+    bool timerStarted = false;
+
+
     private void Awake() {
+
       ResetTimer();
     }  
 
     private void ResetTimer() {
         uiText.text = "00" ;
         uiFillImage.fillAmount = 0f ;
-
+        timerStarted = false;
         Duration = remainingDuration = 0 ;
     }
 
@@ -48,25 +52,6 @@ public class ClockTimer : MonoBehaviour
     }
 
     void Start() {
-
-        // TOOD: Code could be used in case of randomize color boxes
-        // var num = (TIMER_COLOR) Random.Range(0, 3);
-
-        // Debug.Log("Random Number: " + num);
-
-        // switch (num)
-        // {
-        //     case TIMER_COLOR.RED:
-        //         Duration = remainingDuration = 10;
-        //         break;
-        //     case TIMER_COLOR.GREEN:
-        //         Duration = remainingDuration = 20;
-        //         break;
-        //     case TIMER_COLOR.BLUE:
-        //         Duration = remainingDuration = 30;
-        //         break;
-        // }
-
         switch (blockType)
         {
             case TIMER_COLOR.RED:
@@ -86,6 +71,17 @@ public class ClockTimer : MonoBehaviour
         uiText.text = "" + remainingDuration;
 
         StopAllCoroutines();
+        // StartCoroutine(UpdateTimer()) ;
+    }
+
+    void Update() {
+        if(NewTimer.exit_condition == 1 && !timerStarted) {
+            startTimer();
+            timerStarted = true;
+        }
+    }
+
+    void startTimer() {
         StartCoroutine(UpdateTimer()) ;
     }
 
