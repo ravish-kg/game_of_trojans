@@ -46,15 +46,6 @@ public class GameOver : MonoBehaviour
                     if(GameOver1.timeCarryOver <= 0){
                         GameOver1.timeCarryOver = 0f;
                     }
-                    else if(GameOver1.timeCarryOver > 20){
-                        GameOver1.timeCarryOver = 2f;
-                    }
-                    else if(GameOver1.timeCarryOver > 10){
-                        GameOver1.timeCarryOver = 3f;
-                    }
-                    else {
-                        GameOver1.timeCarryOver = 5f;
-                    }
                     Debug.Log("Time Carry Over : " + timeCarryOver);
                     carryOverFlag = false;
                 }
