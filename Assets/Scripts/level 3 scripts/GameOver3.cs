@@ -87,8 +87,10 @@ public class GameOver3 : MonoBehaviour
         // SceneManager.LoadScene("Level1");
         scoreCalc.score = 0;
         Collision3.count = 0;
-        timeCarryOver = 0f;
+        timeCarry.textTimeCarry = 0f;
+        GameOver.timeCarryOver = 0f;
         carryOverFlag = false;
+        GameOver.carryOverFlag = false;
         rotation.isRotationCompleted = 0;
     }
 
@@ -100,9 +102,10 @@ public class GameOver3 : MonoBehaviour
         Collision3.count = 0;
         scoreCalc.score = 0;
         timeCarryOver = 0f;
-        carryOverFlag = false;
         timeCarry.textTimeCarry = 0f;
         GameOver.timeCarryOver = 0f;
+        carryOverFlag = false;
+        GameOver.carryOverFlag = false;
         rotation.isRotationCompleted = 0;
     }
 
