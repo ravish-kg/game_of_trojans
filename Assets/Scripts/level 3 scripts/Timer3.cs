@@ -6,7 +6,7 @@ using TMPro;
 
 public class Timer3 : MonoBehaviour
 {
-    public static float currentTime;
+    public static float currentTime, temp;
     public static float cTime = 0f;
     public static float sTime = 0f;
     public static float startingTime = 30f;
@@ -15,10 +15,11 @@ public class Timer3 : MonoBehaviour
 
     void Start()
     {
-        currentTime = startingTime + GameOver3.timeCarryOver;
-        sTime = startingTime + GameOver3.timeCarryOver;
-        timeCarry3.textTimeCarry = GameOver3.timeCarryOver;
-        GameOver3.timeCarryOver = 0f;
+        currentTime = startingTime + GameOver.timeCarryOver;
+        temp = startingTime;
+        sTime = startingTime + GameOver.timeCarryOver;
+        timeCarry3.textTimeCarry = GameOver.timeCarryOver;
+        GameOver.timeCarryOver = 0f;
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class Timer3 : MonoBehaviour
         if (NewTimer.exit_condition == 1)
         {
             currentTime -= 1 * Time.deltaTime;
+            temp -= 1 * Time.deltaTime;
             cTime = currentTime;
             //Debug.Log("current time is " + currentTime);
             countdownText.text = "Timer: " + currentTime.ToString("0");
@@ -34,22 +36,22 @@ public class Timer3 : MonoBehaviour
             if (MazeChangeText)
             {
 
-                if (currentTime.ToString("0") == "20")
+                if (temp.ToString("0") == "20")
                 {
                     MazeChangeText.SetActive(true);
                     MazeChangeText.GetComponent<TMP_InputField>().text = "Maze change in";
                 }
-                else if (currentTime.ToString("0") == "19")
+                else if (temp.ToString("0") == "19")
                 {
                     MazeChangeText.SetActive(true);
                     MazeChangeText.GetComponent<TMP_InputField>().text = "3";
                 }
-                else if (currentTime.ToString("0") == "18")
+                else if (temp.ToString("0") == "18")
                 {
                     MazeChangeText.SetActive(true);
                     MazeChangeText.GetComponent<TMP_InputField>().text = "2";
                 }
-                else if (currentTime.ToString("0") == "17")
+                else if (temp.ToString("0") == "17")
                 {
                     MazeChangeText.SetActive(true);
                     MazeChangeText.GetComponent<TMP_InputField>().text = "1";

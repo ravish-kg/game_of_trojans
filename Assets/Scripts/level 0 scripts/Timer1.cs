@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Timer1 : MonoBehaviour
 {
     public static float currentTime;
     public static float cTime = 0f;
@@ -67,7 +67,7 @@ public class Timer : MonoBehaviour
             {
                 currentTime = 0;
             }
-            if (Collision.count == 3)
+            if (Collision1.count == 3)
             {
                 currentTime = Time.deltaTime;
             }

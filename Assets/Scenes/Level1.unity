@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 95962069}
   - component: {fileID: 95962068}
   - component: {fileID: 95962067}
+  - component: {fileID: 95962072}
   m_Layer: 0
   m_Name: Equation Text
   m_TagString: Untagged
@@ -545,7 +546,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95962065}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc45b613b2fd8a841a11f6e042d46722, type: 3}
   m_Name: 
@@ -617,6 +618,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95962065}
   m_CullTransparentMesh: 1
+--- !u!114 &95962072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95962065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0423f25eb7eb4f8ab059f785153dda1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equationdisplayText: {fileID: 95962070}
 --- !u!1 &199640071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1119,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: emptyBlock
       value: 
       objectReference: {fileID: 335819024}
@@ -1116,7 +1134,8 @@ PrefabInstance:
       propertyPath: AnimationText
       value: 
       objectReference: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
 --- !u!1 &335819024 stripped
 GameObject:
@@ -1142,6 +1161,24 @@ MonoBehaviour:
   checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1772346792}
+--- !u!114 &335819026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335819024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b525aa312b7416d87ab3aff297de2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  counterText: {fileID: 1772346792}
+  blockType: 2
+  blockUI: {fileID: 871214335}
+  emptyBlock: {fileID: 335819024}
+  blockFill: {fileID: 1731145039}
 --- !u!1 &407631586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFillImage: {fileID: 1731145039}
   uiText: {fileID: 1772346792}
-  blockType: 1
+  blockType: 2
   remainingDuration: 0
   defaultDuration: 15
 --- !u!114 &871214338
@@ -3001,10 +3038,14 @@ PrefabInstance:
     - target: {fileID: 6167207224732665100, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1656210035}
+      objectReference: {fileID: 1656210041}
     - target: {fileID: 6167207224732665100, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167207224732665100, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver1, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
@@ -3233,6 +3274,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: emptyBlock
       value: 
       objectReference: {fileID: 1000235272}
@@ -3244,7 +3289,8 @@ PrefabInstance:
       propertyPath: AnimationText
       value: 
       objectReference: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
 --- !u!1 &1000235272 stripped
 GameObject:
@@ -3270,6 +3316,24 @@ MonoBehaviour:
   checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 772377498}
+--- !u!114 &1000235274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000235272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b525aa312b7416d87ab3aff297de2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  counterText: {fileID: 772377498}
+  blockType: 2
+  blockUI: {fileID: 481594157}
+  emptyBlock: {fileID: 1000235272}
+  blockFill: {fileID: 668475533}
 --- !u!1 &1037320713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,7 +3389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFillImage: {fileID: 596592242}
   uiText: {fileID: 1412890559}
-  blockType: 0
+  blockType: 2
   remainingDuration: 0
   defaultDuration: 20
 --- !u!114 &1037320716
@@ -3594,6 +3658,7 @@ GameObject:
   - component: {fileID: 1062333448}
   - component: {fileID: 1062333447}
   - component: {fileID: 1062333446}
+  - component: {fileID: 1062333449}
   m_Layer: 5
   m_Name: Threshold
   m_TagString: Untagged
@@ -3628,7 +3693,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062333444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfe8bde6521724ebc8034240cacaa053, type: 3}
   m_Name: 
@@ -3676,6 +3741,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062333444}
   m_CullTransparentMesh: 1
+--- !u!114 &1062333449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062333444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb37a848f4a9434e9b2139405ca4571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thresholdText: {fileID: 1062333447}
 --- !u!1 &1148233943
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,6 +4322,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: emptyBlock
       value: 
       objectReference: {fileID: 1250307933}
@@ -4255,7 +4337,8 @@ PrefabInstance:
       propertyPath: AnimationText
       value: 
       objectReference: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
 --- !u!1 &1250307933 stripped
 GameObject:
@@ -4281,6 +4364,24 @@ MonoBehaviour:
   checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 237082407}
+--- !u!114 &1250307935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250307933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b525aa312b7416d87ab3aff297de2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  counterText: {fileID: 237082407}
+  blockType: 2
+  blockUI: {fileID: 1148233943}
+  emptyBlock: {fileID: 1250307933}
+  blockFill: {fileID: 205345724}
 --- !u!1001 &1259213028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4385,6 +4486,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: emptyBlock
       value: 
       objectReference: {fileID: 1259213029}
@@ -4396,7 +4501,8 @@ PrefabInstance:
       propertyPath: AnimationText
       value: 
       objectReference: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
 --- !u!1 &1259213029 stripped
 GameObject:
@@ -4422,6 +4528,24 @@ MonoBehaviour:
   checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1434152754}
+--- !u!114 &1259213031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259213029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b525aa312b7416d87ab3aff297de2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  counterText: {fileID: 1434152754}
+  blockType: 2
+  blockUI: {fileID: 1375131990}
+  emptyBlock: {fileID: 1259213029}
+  blockFill: {fileID: 927759182}
 --- !u!1 &1375131990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4477,7 +4601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFillImage: {fileID: 927759182}
   uiText: {fileID: 1434152754}
-  blockType: 1
+  blockType: 2
   remainingDuration: 0
   defaultDuration: 25
 --- !u!114 &1375131993
@@ -4739,6 +4863,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 596592242}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: emptyBlock
       value: 
       objectReference: {fileID: 1403096718}
@@ -4750,7 +4878,8 @@ PrefabInstance:
       propertyPath: AnimationText
       value: 
       objectReference: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
 --- !u!1 &1403096718 stripped
 GameObject:
@@ -4776,6 +4905,24 @@ MonoBehaviour:
   checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1412890559}
+--- !u!114 &1403096720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403096718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b525aa312b7416d87ab3aff297de2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  counterText: {fileID: 1412890559}
+  blockType: 2
+  blockUI: {fileID: 1037320713}
+  emptyBlock: {fileID: 1403096718}
+  blockFill: {fileID: 596592242}
 --- !u!1 &1412890557
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,6 +5095,7 @@ GameObject:
   - component: {fileID: 1531182742}
   - component: {fileID: 1531182741}
   - component: {fileID: 1531182740}
+  - component: {fileID: 1531182744}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4962,7 +5110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531182739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fc41a3f4e6b04ea48b0675da40a1f3f, type: 3}
   m_Name: 
@@ -5019,6 +5167,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531182744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531182739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7972ac06ca789475482deb817a83ede0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 1679916900}
+  MazeChangeText: {fileID: 0}
 --- !u!1 &1584420743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,6 +5405,7 @@ GameObject:
   - component: {fileID: 1656210037}
   - component: {fileID: 1656210036}
   - component: {fileID: 1656210035}
+  - component: {fileID: 1656210041}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5257,7 +5420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656210034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb502943899f84f29b29aa3bf2ee17e7, type: 3}
   m_Name: 
@@ -5395,6 +5558,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1656210041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656210034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c70691c96bc4b2abf60034ca8107f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1860919040}
+  nextLevelButton: {fileID: 2057501189}
+  equation_panel: {fileID: 1860919039}
+  threshold_panel: {fileID: 1860919038}
+  score_panel: {fileID: 1860919037}
+  gameOver: {fileID: 1860919036}
 --- !u!1 &1679916898
 GameObject:
   m_ObjectHideFlags: 0
@@ -5736,10 +5917,14 @@ PrefabInstance:
     - target: {fileID: 7651753125222771576, guid: 9a04e8ef983f74436b13e4c5ec93ef6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1656210035}
+      objectReference: {fileID: 1656210041}
     - target: {fileID: 7651753125222771576, guid: 9a04e8ef983f74436b13e4c5ec93ef6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: home
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651753125222771576, guid: 9a04e8ef983f74436b13e4c5ec93ef6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7651753125222771582, guid: 9a04e8ef983f74436b13e4c5ec93ef6b, type: 3}
       propertyPath: m_Name
@@ -6287,10 +6472,14 @@ PrefabInstance:
     - target: {fileID: 722549645156543554, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1656210035}
+      objectReference: {fileID: 1656210041}
     - target: {fileID: 722549645156543554, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: loadLevel2
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543554, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 722549645156543556, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
       propertyPath: m_Name
