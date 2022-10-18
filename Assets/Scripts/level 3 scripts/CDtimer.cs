@@ -21,27 +21,31 @@ public class CDtimer : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if(number != null) {
-            currentTime1 -= 1 * Time.deltaTime;
-            // countdownText1.text = currentTime1.ToString("0");
-            number.text = currentTime1.ToString("0");
-            if(currentTime1 <= 0) {
-                currentTime1 = 0;  
-                // countdownText1.text = ""; 
+        if(NewTimer.exit_condition == 1)
+        {
+            if(number != null) {
+                currentTime1 -= 1 * Time.deltaTime;
+                // countdownText1.text = currentTime1.ToString("0");
+                number.text = currentTime1.ToString("0");
+                if(currentTime1 <= 0) {
+                    currentTime1 = 0;  
+                    // countdownText1.text = ""; 
+                    // Destroy(countdownText1.gameObject);
+                    Destroy(hollowNumber.gameObject);
+                    Destroy(gameObject);
+                }
+            }
+            if(Collision.count == 3) {
                 // Destroy(countdownText1.gameObject);
                 Destroy(hollowNumber.gameObject);
                 Destroy(gameObject);
             }
+            if(rotation.isRotationCompleted==1 && checkRotation==0) {
+                hollowNumber.transform.eulerAngles = new Vector3(hollowNumber.transform.eulerAngles.x, hollowNumber.transform.eulerAngles.y, hollowNumber.transform.eulerAngles.z+180);
+                checkRotation=1;
+            }
         }
-        if(Collision.count == 3) {
-            // Destroy(countdownText1.gameObject);
-            Destroy(hollowNumber.gameObject);
-            Destroy(gameObject);
-        }
-        if(rotation.isRotationCompleted==1 && checkRotation==0) {
-            hollowNumber.transform.eulerAngles = new Vector3(hollowNumber.transform.eulerAngles.x, hollowNumber.transform.eulerAngles.y, hollowNumber.transform.eulerAngles.z+180);
-            checkRotation=1;
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

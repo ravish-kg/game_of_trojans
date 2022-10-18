@@ -37,16 +37,20 @@ public class Collision3 : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if(Time.time > time) {
-            c = gameObject.GetComponent<SpriteRenderer>();
-            if(c.color == red) {
-                c.color = orange;
-            } 
-            else if(c.color == orange) {
-                c.color = yellow;
-            }
+        if(NewTimer.exit_condition == 1) 
+        {
+            if(Time.time > time) {
+                c = gameObject.GetComponent<SpriteRenderer>();
+                if(c.color == red) {
+                    c.color = orange;
+                } 
+                else if(c.color == orange) {
+                    c.color = yellow;
+                }
             time = Time.time + gap;
+            }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
