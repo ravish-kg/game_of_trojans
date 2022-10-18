@@ -102,6 +102,7 @@ public class GameOver : MonoBehaviour
         scoreCalc.score = 0;
         Collision.count = 0;
         timeCarryOver = 0f;
+        GameOver1.timeCarryOver = 0f;
         carryOverFlag = false;
     }
 
@@ -114,6 +115,7 @@ public class GameOver : MonoBehaviour
         Collision.count = 0;
         scoreCalc.score = 0;
         timeCarryOver = 0f;
+        GameOver1.timeCarryOver = 0f;
         carryOverFlag = false;
     }
 
