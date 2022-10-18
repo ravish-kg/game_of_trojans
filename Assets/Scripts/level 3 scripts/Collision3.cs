@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class Collision : MonoBehaviour
+public class Collision3 : MonoBehaviour
 {
     public double gap = 7;
     public double time = 7;
@@ -28,14 +26,6 @@ public class Collision : MonoBehaviour
     private string objectd;
     private string BASE_URL="https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
 
-
-    // counter text variable
-    public Text counterText;
-    public TIMER_COLOR blockType;
-    public GameObject blockUI;
-    public GameObject emptyBlock;
-    public Image blockFill;
-
     // Start is called before the first frame update
     void Start() {
         time = Time.time + gap;
@@ -47,21 +37,13 @@ public class Collision : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        int curr = int.Parse(counterText.text);
-        if(curr <= 0) {
-            Destroy(blockUI);
-            Destroy(emptyBlock);
-        }
-
         if(Time.time > time) {
             c = gameObject.GetComponent<SpriteRenderer>();
-            if(blockType == TIMER_COLOR.RED) {
-                blockType = TIMER_COLOR.ORANGE;
-                blockFill.color = orange;
+            if(c.color == red) {
+                c.color = orange;
             } 
-            else if(blockType == TIMER_COLOR.ORANGE) {
-                blockType = TIMER_COLOR.YELLOW;
-                blockFill.color = yellow;
+            else if(c.color == orange) {
+                c.color = yellow;
             }
             time = Time.time + gap;
         }
@@ -69,38 +51,32 @@ public class Collision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.tag == "Player") {
-            // ct = (int) GetComponent<CountdownTimer>().currentTime1;
-            
-            
-            ct = int.Parse(counterText.text);
+            ct = (int) GetComponent<CDtimer>().currentTime1;
             count++;
             c = gameObject.GetComponent<SpriteRenderer>();
             Destroy(gameObject);
-            if(blockType == TIMER_COLOR.YELLOW) {
+            if(c.color==yellow) {
                 // number = Random.Range(1, 11).ToString();
                 number = ct.ToString();
                 AnimationText.GetComponent<TextMeshPro>().text = "1x";
-                // c.GetComponent<TextMesh>().text = number;
+                // hollowNumber.GetComponent<TextMesh>().text = number;
             }
-            else if(blockType == TIMER_COLOR.ORANGE) {
+            else if(c.color==orange) {
                 // number = Random.Range(11, 21).ToString();
                 number = (ct * 2).ToString();
                 AnimationText.GetComponent<TextMeshPro>().text = "2x";
                 // hollowNumber.GetComponent<TextMesh>().text = number;
             }
-            else if(blockType == TIMER_COLOR.RED) {
+            else if(c.color==red) {
                 // number = Random.Range(21, 31).ToString();
                 number = (ct * 3).ToString();
                 AnimationText.GetComponent<TextMeshPro>().text = "3x";
                 // hollowNumber.GetComponent<TextMesh>().text = number;
             }
-
-            Destroy(blockUI);
-
             GameObject clone = (GameObject)Instantiate(AnimationText, transform.position, Quaternion.identity);
             Destroy (clone, 1.0f);
             // Instantiate(hollowNumber, transform.position, Quaternion.identity);
-            string num = Collision.number;
+            string num = Collision3.number;
             index = Equation.display.IndexOf("_");
             Equation.display = Equation.display.Substring(0, index) + num + Equation.display.Substring(index + 1);
             
