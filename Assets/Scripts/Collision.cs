@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Collision : MonoBehaviour
 {
-    public double gap = 7;
-    public double time = 7;
+    // public double gap = 7;
+    // public double time = 7;
     int ct;
     public static string number;
     public static int count = 0;
@@ -38,7 +38,7 @@ public class Collision : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        time = Time.time + gap;
+        // time = Time.time + gap;
         int temp = Random.Range(0, 5);
         pick = equation[temp];
         threshold = thresholdArr[temp];
@@ -53,18 +53,20 @@ public class Collision : MonoBehaviour
             Destroy(emptyBlock);
         }
 
-        if(Time.time > time) {
-            c = gameObject.GetComponent<SpriteRenderer>();
-            if(blockType == TIMER_COLOR.RED) {
-                blockType = TIMER_COLOR.ORANGE;
-                blockFill.color = orange;
-            } 
-            else if(blockType == TIMER_COLOR.ORANGE) {
-                blockType = TIMER_COLOR.YELLOW;
-                blockFill.color = yellow;
-            }
-            time = Time.time + gap;
-        }
+        // if (NewTimer.exit_condition == 1) {
+        //     if(Time.time > time) {
+        //         c = gameObject.GetComponent<SpriteRenderer>();
+        //         if(blockType == TIMER_COLOR.RED) {
+        //             blockType = TIMER_COLOR.ORANGE;
+        //             blockFill.color = orange;
+        //         } 
+        //         else if(blockType == TIMER_COLOR.ORANGE) {
+        //             blockType = TIMER_COLOR.YELLOW;
+        //             blockFill.color = yellow;
+        //         }
+        //         time = Time.time + gap;
+        //     }
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

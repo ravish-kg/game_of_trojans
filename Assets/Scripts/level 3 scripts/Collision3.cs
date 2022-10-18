@@ -5,8 +5,8 @@ using TMPro;
 
 public class Collision3 : MonoBehaviour
 {
-    public double gap = 7;
-    public double time = 7;
+    // public double gap = 7;
+    // public double time = 7;
     int ct;
     public static string number;
     public static int count = 0;
@@ -28,7 +28,7 @@ public class Collision3 : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        time = Time.time + gap;
+        // time = Time.time + gap;
         int temp = Random.Range(0, 5);
         pick = equation[temp];
         threshold = thresholdArr[temp];
@@ -37,19 +37,19 @@ public class Collision3 : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if(NewTimer.exit_condition == 1) 
-        {
-            if(Time.time > time) {
-                c = gameObject.GetComponent<SpriteRenderer>();
-                if(c.color == red) {
-                    c.color = orange;
-                } 
-                else if(c.color == orange) {
-                    c.color = yellow;
-                }
-            time = Time.time + gap;
-            }
-        }
+        // if(NewTimer.exit_condition == 1) 
+        // {
+        //     if(Time.time > time) {
+        //         c = gameObject.GetComponent<SpriteRenderer>();
+        //         if(c.color == red) {
+        //             c.color = orange;
+        //         } 
+        //         else if(c.color == orange) {
+        //             c.color = yellow;
+        //         }
+        //     time = Time.time + gap;
+        //     }
+        // }
         
     }
 
