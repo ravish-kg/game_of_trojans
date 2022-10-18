@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1027
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 71
+  controlID: 21
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 72
+  controlID: 22
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 73
+  controlID: 23
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/koushik-m/Documents/CSCI526/game_of_trojans
+  m_LastProjectPath: /Users/koushik-m/Documents/testing/game_of_trojans
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b4640000
-    m_LastClickedID: 25780
-    m_ExpandedIDs: 00000000a2640000b4640000b664000000ca9a3b
+    m_SelectedIDs: be600000
+    m_LastClickedID: 24766
+    m_ExpandedIDs: 00000000ba600000bc600000be60000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a2640000
+    m_ExpandedIDs: 00000000ba600000bc600000be600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -447,24 +447,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      scrollPos: {x: 0, y: 115.76752}
+      m_SelectedIDs: f81d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 2898ffff249effffa4a0ffffb6a1ffff0cacffff1cadffffacb1ffff9cb2ffff34bbffff80c0ffff8cc1ffffb6c4ffff06cbffff18ceffffaad0ffff42d7ffff30d8ffff74daffff62dbffff3adcfffff4e8ffff04eaffff08ebffff00f7ffffe8f7ffffeef8ffff2cfbffff76a50000fca50000b0a7000040c6000010c7000058c8000062c9000062ca000032cb00007cce000086cf000080d0000052d10000bef7000090f80000420101004c020100b60901001e0a01008e0b0100c4360100ce370100743a0100dc3a0100d0480100204901009e490100ba490100024a0100144a0100b668010056690100347b01003e7b0100727b0100
+      m_ExpandedIDs: ccf6ffff2cfbffff9c820000308300005a830000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Tutorial
-        m_OriginalName: Tutorial
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 97086
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
