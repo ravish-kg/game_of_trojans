@@ -101,6 +101,8 @@ public class GameOver3 : MonoBehaviour
         scoreCalc.score = 0;
         timeCarryOver = 0f;
         carryOverFlag = false;
+        timeCarry.textTimeCarry = 0f;
+        GameOver.timeCarryOver = 0f;
         rotation.isRotationCompleted = 0;
     }
 

@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     {
         currentTime = startingTime + GameOver.timeCarryOver;
         sTime = startingTime + GameOver.timeCarryOver;
+        timeCarry.textTimeCarry = GameOver.timeCarryOver;
         GameOver.timeCarryOver = 0f;
     }
 

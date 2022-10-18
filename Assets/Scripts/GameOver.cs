@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour
     public static bool carryOverFlag = false;
 
     public GameObject gameOverPanel;
+    public GameObject nextLevelButton;
+
     public Text equation_panel;
     public Text threshold_panel;
     public Text score_panel;
@@ -37,6 +39,7 @@ public class GameOver : MonoBehaviour
             if(scoreCalc.score >= int.Parse(Collision.threshold)) {
                 gameOver.text = "Success! Level complete!";
                 equation_panel.text = "Equation: " + Collision.math_eq;
+                nextLevelButton.SetActive(true);
 
                 if(carryOverFlag){
                     timeCarryOver = Timer.sTime - Timer.cTime;
@@ -80,6 +83,7 @@ public class GameOver : MonoBehaviour
 
     public void Restart() {
         Debug.Log(SceneManager.GetActiveScene().name);
+        nextLevelButton.SetActive(false);
         gameOverPanel.SetActive(false);
         GameOpener.panel_counter = 0;
         entry_restart_condition = 1;
@@ -94,6 +98,7 @@ public class GameOver : MonoBehaviour
 
     public void home() {
         gameOverPanel.SetActive(false);
+        nextLevelButton.SetActive(false);
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Menu");
@@ -107,6 +112,7 @@ public class GameOver : MonoBehaviour
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level1");
+        nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision.count = 0;
     }
@@ -114,6 +120,7 @@ public class GameOver : MonoBehaviour
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level2_tutorial");
+        nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision.count = 0;
         
@@ -123,6 +130,7 @@ public class GameOver : MonoBehaviour
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level3_tutorial");
+        nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision.count = 0;
     }
