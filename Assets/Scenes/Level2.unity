@@ -1740,6 +1740,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 12
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1848381704}
 --- !u!1 &346411114
@@ -2621,6 +2623,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1624768945}
 --- !u!1 &544136430
@@ -4012,6 +4016,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1995426758}
 --- !u!1 &802478667
@@ -4110,6 +4116,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 2069902095}
 --- !u!1 &964865656
@@ -4265,6 +4273,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 20
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1195528161}
 --- !u!1 &972238071
@@ -4392,7 +4402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8028094336695342748, guid: 983a83039b19c4923a343c97ff8fcc4f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 76.215
+      value: 127.11
       objectReference: {fileID: 0}
     - target: {fileID: 8028094336695342748, guid: 983a83039b19c4923a343c97ff8fcc4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4428,7 +4438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8028094336695342748, guid: 983a83039b19c4923a343c97ff8fcc4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -361
+      value: -357.08
       objectReference: {fileID: 0}
     - target: {fileID: 8028094336695342748, guid: 983a83039b19c4923a343c97ff8fcc4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5712,6 +5722,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1004282338}
 --- !u!1 &1292025708
@@ -9011,11 +9023,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 756.8531
+      value: 785.68
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42.7429
+      value: -57.158
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
@@ -9322,6 +9334,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 375790154}
 --- !u!1 &1995426756
@@ -9557,6 +9571,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 2015786415}
 --- !u!1 &2015786413
@@ -9999,6 +10015,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 1821691915}
 --- !u!1 &2104131958
