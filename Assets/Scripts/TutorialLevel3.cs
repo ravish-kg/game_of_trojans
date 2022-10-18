@@ -12,13 +12,14 @@ public class TutorialLevel3 : MonoBehaviour
     public GameObject tryItOut;
     public GameObject player;
 
-    public static int popUpIndex;
+    public int popUpIndex;
     public float waitTime;
     public float waitTime2;
 
     // Start is called before the first frame update
     void Start()
     {
+        popUpIndex = 0;
         waitTime = 2f;
         waitTime2 = 2f;
 

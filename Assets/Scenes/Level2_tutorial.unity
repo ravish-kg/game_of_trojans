@@ -2682,6 +2682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1021873945}
   - component: {fileID: 1021873946}
+  - component: {fileID: 1021873947}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -2725,8 +2726,27 @@ MonoBehaviour:
   button: {fileID: 451637257}
   tryItOut: {fileID: 0}
   player: {fileID: 0}
+  popUpIndex: 0
   waitTime: 1
   waitTime2: 1
+--- !u!114 &1021873947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021873943}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7deac47fa0b4b3d951561419c6a76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUps: []
+  button: {fileID: 631051441}
+  tryItOut: {fileID: 641951953}
+  player: {fileID: 77219218}
+  waitTime: 0
+  waitTime2: 0
 --- !u!1 &1177343311
 GameObject:
   m_ObjectHideFlags: 0
