@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Collision3 : MonoBehaviour
 {
@@ -95,7 +96,8 @@ public class Collision3 : MonoBehaviour
             }
 
             // objectd = "~Time-"+Time.time+"~Color-"+c.color+"~Value-"+hollowNumber.GetComponent<TextMesh>().text+"~Order-"+count+"\n";
-            objectd = "~Time-"+Time.time+"~Color-"+c.color+"~Value-"+num+"~Order-"+count+"\n";
+            // objectd = "~Time-"+Time.time+"~Color-"+c.color+"~Value-"+num+"~Order-"+count+"\n";
+            objectd = "~Time$"+Time.time+"~Color$"+c.color+"~Value$"+num+"~Order$"+count+"~Level$"+SceneManager.GetActiveScene().name+"~Sessionid$"+Player.sessionid+"~Username$"+InstructionScript.uname+"\n";
 
             StartCoroutine(Post("",objectd));
 
@@ -104,7 +106,9 @@ public class Collision3 : MonoBehaviour
                 math_eq = Equation.display.Substring(i1 + 2);
                 int value_of_eq = bodmas.evaluate(math_eq);
                 scoreCalc.score = value_of_eq;
-                Gameo = "GameEnd~Timer-"+Time.time+"~equation-"+Equation.display+"~threshold-"+threshold+"~Order-"+count+"\n";
+                // Gameo = "GameEnd~Timer-"+Time.time+"~equation-"+Equation.display+"~threshold-"+threshold+"~Order-"+count+"\n";
+                Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+threshold+"~Order$"+count+"~Level$"+SceneManager.GetActiveScene().name+"~Sessionid$"+Player.sessionid+"~Username$"+InstructionScript.uname+"\n";
+               
                 StartCoroutine(Post(Gameo,""));
             }
         }

@@ -71,7 +71,9 @@ public class GameOver1 : MonoBehaviour
 
                 }
                 if(flag == 0) {
-                    Gameo = "GameEnd~Timer-"+Time.time+"~equation-"+Equation.display+"~threshold-"+Collision1.threshold+"~Order-"+Collision1.count+"\n";
+                    // Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+Collision1.threshold+"~Order$"+Collision1.count+"\n";
+                    Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+Collision1.threshold+"~Order$"+Collision1.count+"~Level$"+SceneManager.GetActiveScene().name+"~Sessionid$"+Player.sessionid+"~Username$"+InstructionScript.uname+"\n";
+                    
                     StartCoroutine(Post(Gameo,""));
                     flag = 1;
                 }

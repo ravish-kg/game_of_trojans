@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 844033751}
+  nextLevelButton: {fileID: 0}
   equation_panel: {fileID: 462183033}
   threshold_panel: {fileID: 1232283766}
   score_panel: {fileID: 1968205638}
@@ -884,6 +885,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: AnimationText
       value: 
       objectReference: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
@@ -909,6 +914,8 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 12
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 0}
 --- !u!1 &346411114
@@ -1096,6 +1103,10 @@ PrefabInstance:
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: time
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: AnimationText
@@ -1371,7 +1382,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: Level0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &451637260
@@ -1750,6 +1761,10 @@ PrefabInstance:
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: time
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: AnimationText
@@ -2416,8 +2431,29 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 0}
+--- !u!114 &772230738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772230731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ded44be3d1c46be84d48ec140d3520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  AnimationText: {fileID: 0}
+  counterText: {fileID: 0}
+  blockType: 0
+  blockUI: {fileID: 0}
+  emptyBlock: {fileID: 0}
+  blockFill: {fileID: 0}
 --- !u!1001 &772423373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2871,8 +2907,29 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 28
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 0}
+--- !u!114 &931375318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931375311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ded44be3d1c46be84d48ec140d3520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  AnimationText: {fileID: 0}
+  counterText: {fileID: 0}
+  blockType: 0
+  blockUI: {fileID: 0}
+  emptyBlock: {fileID: 0}
+  blockFill: {fileID: 0}
 --- !u!1 &972971383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,8 +3311,29 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 0}
+--- !u!114 &1263491363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263491356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ded44be3d1c46be84d48ec140d3520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  AnimationText: {fileID: 0}
+  counterText: {fileID: 0}
+  blockType: 0
+  blockUI: {fileID: 0}
+  emptyBlock: {fileID: 0}
+  blockFill: {fileID: 0}
 --- !u!1 &1263694609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,6 +3492,10 @@ PrefabInstance:
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: time
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135786350020996716, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: AnimationText
@@ -4950,8 +5032,29 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 50
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 0}
+--- !u!114 &2003387336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003387329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ded44be3d1c46be84d48ec140d3520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  AnimationText: {fileID: 0}
+  counterText: {fileID: 0}
+  blockType: 0
+  blockUI: {fileID: 0}
+  emptyBlock: {fileID: 0}
+  blockFill: {fileID: 0}
 --- !u!1 &2043340513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,5 +5211,26 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 18
   hollowNumber: {fileID: 0}
+  number: {fileID: 0}
+  checkRotation: 0
   mazeChangeText: {fileID: 0}
   remainingDuration: {fileID: 0}
+--- !u!114 &2100422114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100422107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ded44be3d1c46be84d48ec140d3520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  AnimationText: {fileID: 0}
+  counterText: {fileID: 0}
+  blockType: 0
+  blockUI: {fileID: 0}
+  emptyBlock: {fileID: 0}
+  blockFill: {fileID: 0}

@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: 
-    guid: 3a37e2dbd66408a4685a2e9c2722d7ae
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/QuitGame.unity
     guid: fd04e550edca0f842aaeff5690b246b7
@@ -26,13 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 361cd3312b7324c738979b4193a23c63
-  - enabled: 1
-    path: Assets/Scenes/Level3.unity
-    guid: 3f49493d0ce01482cbd7abd9bd8bc6d0
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level3_tutorial.unity
     guid: ba44b28be909e40a2bb7645892d563e0
   - enabled: 1
     path: Assets/Scenes/Level2_tutorial.unity
     guid: 6034712a6ed9a4e279348d10ac757c81
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 9a05f581432044c22acf16d85b667a56
   m_configObjects: {}

@@ -6,8 +6,11 @@ using System;
 
 public class InstructionScript : MonoBehaviour
 {
+    public static string uname;
     public void btn_change_scene(string scene_name)
     {
+        uname=Environment.UserName+Time.time;
+        // Debug.Log("!!Username: "+uname);
         GameOpener.panel_counter = 0;
         TutorialManager.popUpIndex = 0;
         NewTimer.exit_condition = 0;
