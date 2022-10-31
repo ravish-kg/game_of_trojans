@@ -8,9 +8,11 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigidbody;
     float direction;
     public Vector2 movement = new Vector2();
+    public static float sessionid;
 
     // Start is called before the first frame update
     void Start() {
+        sessionid=Time.time;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 

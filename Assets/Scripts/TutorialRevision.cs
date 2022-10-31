@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Collision : MonoBehaviour
+public class TutorialRevision : MonoBehaviour
 {
     // public double gap = 7;
     // public double time = 7;
@@ -47,11 +47,7 @@ public class Collision : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        int curr = int.Parse(counterText.text);
-        if(curr <= 0) {
-            Destroy(blockUI);
-            Destroy(emptyBlock);
-        }
+        
 
         // if (NewTimer.exit_condition == 1) {
         //     if(Time.time > time) {
