@@ -37,13 +37,22 @@ public class GameOver3 : MonoBehaviour
                 gameOver.text = "Success! Level complete!";
                 equation_panel.text = "Equation: " + Collision3.math_eq;
 
-                if(carryOverFlag){
-                    timeCarryOver = Timer3.sTime - Timer3.cTime;
-                    if(timeCarryOver <= 0){
-                        timeCarryOver = 0f;
+                if(GameOver.carryOverFlag){
+                    GameOver.timeCarryOver = Timer3.sTime - Timer3.cTime;
+                    if(GameOver.timeCarryOver <= 0){
+                        GameOver.timeCarryOver = 0f;
+                    }
+                    else if(GameOver.timeCarryOver < 10){
+                        GameOver.timeCarryOver = 5;
+                    }
+                    else if(GameOver.timeCarryOver < 20){
+                        GameOver.timeCarryOver = 3;
+                    }
+                    else{
+                        GameOver.timeCarryOver = 2;
                     }
                     Debug.Log("Time Carry Over : " + timeCarryOver);
-                    carryOverFlag = false;
+                    GameOver.carryOverFlag = false;
                 }
             }
             else {
