@@ -48,7 +48,7 @@ public class rotation : MonoBehaviour
                 checkInitialTime = true;
             }
 
-            if (Time.time >= time2 && !isRotating)
+            if (Time.time >= time2 && !isRotating && Collision3.count < 3)
             {
                 // x = player.transform.position.x;
                 // y = player.transform.position.y;

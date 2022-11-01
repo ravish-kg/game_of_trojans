@@ -33,35 +33,35 @@ public class Timer3 : MonoBehaviour
             countdownText.text = "Timer: " + currentTime.ToString("0");
 
 
-            if (MazeChangeText)
-            {
+            // if (MazeChangeText)
+            // {
 
-                if (temp.ToString("0") == "20")
-                {
-                    MazeChangeText.SetActive(true);
-                    MazeChangeText.GetComponent<TMP_InputField>().text = "Maze change in";
-                }
-                else if (temp.ToString("0") == "19")
-                {
-                    MazeChangeText.SetActive(true);
-                    MazeChangeText.GetComponent<TMP_InputField>().text = "3";
-                }
-                else if (temp.ToString("0") == "18")
-                {
-                    MazeChangeText.SetActive(true);
-                    MazeChangeText.GetComponent<TMP_InputField>().text = "2";
-                }
-                else if (temp.ToString("0") == "17")
-                {
-                    MazeChangeText.SetActive(true);
-                    MazeChangeText.GetComponent<TMP_InputField>().text = "1";
-                }
+            //     if (temp.ToString("0") == "20")
+            //     {
+            //         MazeChangeText.SetActive(true);
+            //         MazeChangeText.GetComponent<TMP_InputField>().text = "Maze change in";
+            //     }
+            //     else if (temp.ToString("0") == "19")
+            //     {
+            //         MazeChangeText.SetActive(true);
+            //         MazeChangeText.GetComponent<TMP_InputField>().text = "3";
+            //     }
+            //     else if (temp.ToString("0") == "18")
+            //     {
+            //         MazeChangeText.SetActive(true);
+            //         MazeChangeText.GetComponent<TMP_InputField>().text = "2";
+            //     }
+            //     else if (temp.ToString("0") == "17")
+            //     {
+            //         MazeChangeText.SetActive(true);
+            //         MazeChangeText.GetComponent<TMP_InputField>().text = "1";
+            //     }
 
-                else
-                {
-                    MazeChangeText.SetActive(false);
-                }
-            }
+            //     else
+            //     {
+            //         MazeChangeText.SetActive(false);
+            //     }
+            // }
 
 
 
