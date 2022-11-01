@@ -17,8 +17,14 @@ public class timeCarry3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(textTimeCarry > 0){
-            carryOverText.text = "You have gained " + (int)textTimeCarry + " seconds!!  It will be added to the next level.";
+        if(textTimeCarry == 5){
+            carryOverText.text = "Hurrah! You have completed the level within 10 seconds!!" + (int)textTimeCarry +  " will be added to the next level.";
+        }
+        else if(textTimeCarry == 3){
+            carryOverText.text = "Hurrah! You have completed the level within 20 seconds!!" + (int)textTimeCarry +  " will be added to the next level.";
+        }
+        else if(textTimeCarry == 2){
+            carryOverText.text = "Hurrah! You have completed the level within 30 seconds!!" + (int)textTimeCarry +  " will be added to the next level.";
         }
         else{
             carryOverText.text = "";

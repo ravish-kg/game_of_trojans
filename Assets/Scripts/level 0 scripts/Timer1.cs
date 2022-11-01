@@ -15,10 +15,10 @@ public class Timer1 : MonoBehaviour
 
     void Start()
     {
-        currentTime = startingTime + GameOver1.timeCarryOver;
-        sTime = startingTime + GameOver1.timeCarryOver;
-        timeCarry.textTimeCarry = GameOver1.timeCarryOver;
-        GameOver1.timeCarryOver = 0f;
+        currentTime = startingTime + GameOver.timeCarryOver;
+        sTime = startingTime + GameOver.timeCarryOver;
+        timeCarry.textTimeCarry = GameOver.timeCarryOver;
+        GameOver.timeCarryOver = 0f;
     }
 
     void Update()

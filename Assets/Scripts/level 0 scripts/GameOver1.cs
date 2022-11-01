@@ -29,7 +29,7 @@ public class GameOver1 : MonoBehaviour
     }
 
     void Start() {
-        carryOverFlag = true;
+        GameOver.carryOverFlag = true;
     }
 
     // Update is called once per frame
@@ -41,13 +41,22 @@ public class GameOver1 : MonoBehaviour
                 equation_panel.text = "Equation: " + Collision1.math_eq;
                 nextLevelButton.SetActive(true);
 
-                if(carryOverFlag){
-                    timeCarryOver = Timer1.sTime - Timer1.cTime;
-                    if(timeCarryOver <= 0){
-                        timeCarryOver = 0f;
+                if(GameOver.carryOverFlag){
+                    GameOver.timeCarryOver = Timer1.sTime - Timer1.cTime;
+                    if(GameOver.timeCarryOver <= 0){
+                        GameOver.timeCarryOver = 0f;
                     }
-                    Debug.Log("Time Carry Over : " + timeCarryOver);
-                    carryOverFlag = false;
+                    else if(GameOver.timeCarryOver < 10){
+                        GameOver.timeCarryOver = 5;
+                    }
+                    else if(GameOver.timeCarryOver < 20){
+                        GameOver.timeCarryOver = 3;
+                    }
+                    else{
+                        GameOver.timeCarryOver = 2;
+                    }
+                    Debug.Log("Time Carry Over : " + GameOver.timeCarryOver);
+                    GameOver.carryOverFlag = false;
                 }
             }
             else {
@@ -94,8 +103,8 @@ public class GameOver1 : MonoBehaviour
         // SceneManager.LoadScene("Level1");
         scoreCalc.score = 0;
         Collision1.count = 0;
-        timeCarryOver = 0f;
-        carryOverFlag = false;
+        GameOver.timeCarryOver = 0f;
+        GameOver.carryOverFlag = false;
     }
 
     public void home() {
@@ -106,8 +115,8 @@ public class GameOver1 : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Collision1.count = 0;
         scoreCalc.score = 0;
-        timeCarryOver = 0f;
-        carryOverFlag = false;
+        GameOver.timeCarryOver = 0f;
+        GameOver.carryOverFlag = false;
     }
 
     public void loadLevel1(){

@@ -42,9 +42,18 @@ public class GameOver : MonoBehaviour
                 nextLevelButton.SetActive(true);
 
                 if(carryOverFlag){
-                    GameOver1.timeCarryOver = Timer.sTime - Timer.cTime;
-                    if(GameOver1.timeCarryOver <= 0){
-                        GameOver1.timeCarryOver = 0f;
+                    timeCarryOver = Timer.sTime - Timer.cTime;
+                    if(timeCarryOver <= 0){
+                        timeCarryOver = 0f;
+                    }
+                    else if(timeCarryOver < 10){
+                        timeCarryOver = 5f;
+                    }
+                    else if(timeCarryOver < 20){
+                        timeCarryOver = 3f;
+                    }
+                    else{
+                        timeCarryOver = 2f;
                     }
                     Debug.Log("Time Carry Over : " + timeCarryOver);
                     carryOverFlag = false;
@@ -94,7 +103,7 @@ public class GameOver : MonoBehaviour
         scoreCalc.score = 0;
         Collision.count = 0;
         timeCarryOver = 0f;
-        GameOver1.timeCarryOver = 0f;
+        GameOver.timeCarryOver = 0f;
         carryOverFlag = false;
     }
 
@@ -107,7 +116,7 @@ public class GameOver : MonoBehaviour
         Collision.count = 0;
         scoreCalc.score = 0;
         timeCarryOver = 0f;
-        GameOver1.timeCarryOver = 0f;
+        GameOver.timeCarryOver = 0f;
         carryOverFlag = false;
     }
 
