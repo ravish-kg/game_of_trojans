@@ -12,7 +12,7 @@ public class CountdownTimer : MonoBehaviour
     public float startTime1;
     public GameObject hollowNumber;
     private SpriteRenderer c;
-    // [SerializeField] Text countdownText1;
+    [SerializeField] Text countdownText1;
     //Changes for Level 3
     [SerializeField] TMP_Text number;
    
@@ -67,7 +67,7 @@ public class CountdownTimer : MonoBehaviour
             // }
         }
         // if(Collision.count == 3) {
-        //     Destroy(countdownText1.gameObject);
+        //     // Destroy(number.gameObject);
         //     Destroy(gameObject);
         // }
         }

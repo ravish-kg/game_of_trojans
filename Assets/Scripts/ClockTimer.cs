@@ -79,6 +79,16 @@ public class ClockTimer : MonoBehaviour
             startTimer();
             timerStarted = true;
         }
+        if(Collision1.count == 3) {
+            // Destroy(number.gameObject);
+            Debug.Log("inside clock timer script");
+            Destroy(gameObject);
+        }
+        if(Collision.count == 3) {
+            // Destroy(number.gameObject);
+            Debug.Log("inside clock timer script");
+            Destroy(gameObject);
+        }
     }
 
     void startTimer() {
