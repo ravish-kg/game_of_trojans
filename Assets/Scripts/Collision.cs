@@ -19,7 +19,7 @@ public class Collision : MonoBehaviour
     Color orange = new Color(1f,165f/255f,0f,1f);
     Color yellow = new Color(1f,235f/255f,4f/255f,1f);
     string[] equation = { "_ + ( _ * _ )", "( _ * _ ) + _ ", "( _ / _ ) + _", "_ + _ - _", "_ * ( _ / _ )" };
-    string[] thresholdArr = { "100", "200", "20", "30", "30" };
+    
     public static string pick;
     public static string threshold;
     public int index;
@@ -38,10 +38,18 @@ public class Collision : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        // time = Time.time + gap;
-        int temp = Random.Range(0, 5);
-        pick = equation[temp];
-        threshold = thresholdArr[temp];
+        Scene scene = SceneManager.GetActiveScene();
+        Debug.Log("****");
+        Debug.Log(scene.name);
+        
+        if (scene.name == "Level2")
+        {
+            string[] thresholdArr = { "400", "800", "25", "50", "200" };
+            int temp = Random.Range(0, 5);
+            pick = equation[temp];
+            threshold = thresholdArr[temp];
+        }
+        
         Equation.display = "Equation: " + pick;
     }
 

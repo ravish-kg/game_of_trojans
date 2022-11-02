@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 128613457}
   - component: {fileID: 128613458}
   - component: {fileID: 128613459}
+  - component: {fileID: 128613460}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -708,6 +709,28 @@ MonoBehaviour:
   threshold_panel: {fileID: 1880681451}
   score_panel: {fileID: 1880681450}
   gameOver: {fileID: 1880681449}
+--- !u!114 &128613460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128613453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2671484b8d2844b348499c319c04a880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block1: {fileID: 1964121452}
+  block2: {fileID: 966947475}
+  block3: {fileID: 1263491356}
+  block4: {fileID: 931375311}
+  block5: {fileID: 332230840}
+  block6: {fileID: 2003387329}
+  block7: {fileID: 2100422107}
+  block8: {fileID: 772230731}
+  popupCanvas: {fileID: 266905665}
+  TimerCanvas: {fileID: 1580262790}
 --- !u!1 &164544173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1859,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 12
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -4202,6 +4226,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -4378,6 +4403,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -4535,6 +4561,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 20
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -5908,6 +5935,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -9202,7 +9230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9237,8 +9265,16 @@ PrefabInstance:
       value: 785.68
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9003401
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1556876
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -57.158
+      value: -29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
@@ -9545,6 +9581,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -9782,6 +9819,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -10130,6 +10168,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
