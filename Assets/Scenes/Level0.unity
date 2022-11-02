@@ -889,6 +889,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 20
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -2528,6 +2529,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -2985,6 +2987,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 18
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -3123,6 +3126,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 45
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -5982,6 +5986,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 22
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -6035,6 +6040,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 30
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -6293,6 +6299,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -6471,6 +6478,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6504,7 +6515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6535,12 +6546,20 @@ PrefabInstance:
       value: 785.68
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1464942
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1.1895
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -57.158
+      value: -46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}

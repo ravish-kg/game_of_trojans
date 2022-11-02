@@ -1157,6 +1157,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 15
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -3312,6 +3313,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -4360,6 +4362,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -4524,6 +4527,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 25
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -4901,6 +4905,7 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 20
   hollowNumber: {fileID: 0}
+  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -5406,6 +5411,7 @@ GameObject:
   - component: {fileID: 1656210036}
   - component: {fileID: 1656210035}
   - component: {fileID: 1656210041}
+  - component: {fileID: 1656210042}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5576,6 +5582,25 @@ MonoBehaviour:
   threshold_panel: {fileID: 1860919038}
   score_panel: {fileID: 1860919037}
   gameOver: {fileID: 1860919036}
+--- !u!114 &1656210042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656210034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a807e4b07ebf4477fb5c005cd9b2b549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block1: {fileID: 1250307933}
+  block2: {fileID: 1403096718}
+  block3: {fileID: 335819024}
+  block4: {fileID: 1259213029}
+  block5: {fileID: 1000235272}
+  popupCanvas: {fileID: 451932378}
+  TimerCanvas: {fileID: 1630032673}
 --- !u!1 &1679916898
 GameObject:
   m_ObjectHideFlags: 0
@@ -6254,7 +6279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6301,12 +6326,20 @@ PrefabInstance:
       value: 785.68
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9502
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -5.4106
       objectReference: {fileID: 0}
     - target: {fileID: 6247862865553773493, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -57.158
+      value: -35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
