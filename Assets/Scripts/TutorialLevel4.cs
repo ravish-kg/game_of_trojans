@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TutorialLevel2 : MonoBehaviour
+public class TutorialLevel4 : MonoBehaviour
 {
 
     public GameObject[] popUps;

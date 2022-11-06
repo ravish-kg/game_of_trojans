@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Level4")
+        {
+            startingTime = 50f;
+        }
         currentTime = startingTime + GameOver.timeCarryOver;
         sTime = startingTime + GameOver.timeCarryOver;
         timeCarry.textTimeCarry = GameOver.timeCarryOver;

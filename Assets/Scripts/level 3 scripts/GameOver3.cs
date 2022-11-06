@@ -144,4 +144,13 @@ public class GameOver3 : MonoBehaviour
         Collision3.count = 0;
     }
 
+    public void loadLevel4()
+    {
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
+        SceneManager.LoadScene("Level4_tutorial");
+        scoreCalc.score = 0;
+        Collision3.count = 0;
+    }
+
 }
