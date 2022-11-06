@@ -48,8 +48,14 @@ public class Collision : MonoBehaviour
             int temp = Random.Range(0, 5);
             pick = equation[temp];
             threshold = thresholdArr[temp];
+        } else if (scene.name == "Level4")
+        {
+            string[] thresholdArr = { "400", "800", "25", "50", "200" };
+            int temp = Random.Range(0, 5);
+            pick = equation[temp];
+            threshold = thresholdArr[temp];
         }
-        
+
         Equation.display = "Equation: " + pick;
     }
 

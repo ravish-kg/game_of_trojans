@@ -63,30 +63,40 @@ public class Player : MonoBehaviour
         
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision){
-    //     if(collision.gameObject.tag == "Darkboxes"){
-    //         Destroy(collision.gameObject);
-    //         //logic for darkboxes
-    //     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Blades")
+        {
+            Debug.Log("Obstacle hit Blades");
+            Timer.currentTime = 0;
+        }
 
-    //     if(collision.gameObject.tag == "LightBoxes"){
-    //         Destroy(collision.gameObject);
-    //     }
+    }
+
+        // private void OnCollisionEnter2D(Collision2D collision){
+        //     if(collision.gameObject.tag == "Darkboxes"){
+        //         Destroy(collision.gameObject);
+        //         //logic for darkboxes
+        //     }
+
+        //     if(collision.gameObject.tag == "LightBoxes"){
+        //         Destroy(collision.gameObject);
+        //     }
 
 
-    //     if(collision.gameObject.tag == "Walls"){
-    //            if(Input.GetKey(KeyCode.LeftArrow)){
-    //         transform.Translate(speed*Time.deltaTime,0,0);
-    //     }
-    //      if(Input.GetKey(KeyCode.RightArrow)){
-    //         transform.Translate(-speed*Time.deltaTime,0,0);
-    //     }
-    //      if(Input.GetKey(KeyCode.UpArrow)){
-    //         transform.Translate(0,-speed*Time.deltaTime,0);
-    //     }
-    //      if(Input.GetKey(KeyCode.DownArrow)){
-    //         transform.Translate(0,speed*Time.deltaTime,0);
-    //     }
-    //     }
-    // }
-}
+        //     if(collision.gameObject.tag == "Walls"){
+        //            if(Input.GetKey(KeyCode.LeftArrow)){
+        //         transform.Translate(speed*Time.deltaTime,0,0);
+        //     }
+        //      if(Input.GetKey(KeyCode.RightArrow)){
+        //         transform.Translate(-speed*Time.deltaTime,0,0);
+        //     }
+        //      if(Input.GetKey(KeyCode.UpArrow)){
+        //         transform.Translate(0,-speed*Time.deltaTime,0);
+        //     }
+        //      if(Input.GetKey(KeyCode.DownArrow)){
+        //         transform.Translate(0,speed*Time.deltaTime,0);
+        //     }
+        //     }
+        // }
+    }

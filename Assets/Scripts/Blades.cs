@@ -1,9 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dinosaur : MonoBehaviour
+public class Blades : MonoBehaviour
 {
+
+    public float rotateSpeed;
 
     void Start()
     {
@@ -13,16 +15,12 @@ public class Dinosaur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0, 0, rotateSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player")
-        {
-            Debug.Log("Obstacle hit Dinosaour");
-            Timer.currentTime = 0;
-        }
+        
 
     }
 }
