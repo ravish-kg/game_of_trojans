@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 30
   hollowNumber: {fileID: 1167047471}
   number: {fileID: 0}
   checkRotation: 0
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 35
   hollowNumber: {fileID: 1982862988}
   number: {fileID: 0}
   checkRotation: 0
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 25
   hollowNumber: {fileID: 872239018}
   number: {fileID: 0}
   checkRotation: 0
@@ -5224,7 +5224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 25
   hollowNumber: {fileID: 703079410}
   number: {fileID: 0}
   checkRotation: 0
@@ -6014,7 +6014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 15
   hollowNumber: {fileID: 910605895}
   number: {fileID: 0}
   checkRotation: 0
@@ -7353,7 +7353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 20
   hollowNumber: {fileID: 1361409974}
   number: {fileID: 0}
   checkRotation: 0
