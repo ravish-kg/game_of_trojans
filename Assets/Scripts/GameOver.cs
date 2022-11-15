@@ -21,25 +21,33 @@ public class GameOver : MonoBehaviour
     private string objectd;
     private string BASE_URL="https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
     private int flag = 0;
+    Scene scene;
 
     void Awake(){
         // Debug.Log("Awake");
         gameOverPanel.SetActive(false);
         
+
     }
 
     void Start() {
         carryOverFlag = true;
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
     void Update() {
+
         if (Collision.count == 3 || Timer.currentTime == 0) {
             gameOverPanel.SetActive(true);
             if(scoreCalc.score >= int.Parse(Collision.threshold)) {
                 gameOver.text = "Success! Level complete!";
                 equation_panel.text = "Equation: " + Collision.math_eq;
-                nextLevelButton.SetActive(true);
+
+                if (scene.name != "Level4")
+                {
+                    nextLevelButton.SetActive(true);
+                }
 
                 if(carryOverFlag){
                     timeCarryOver = Timer.sTime - Timer.cTime;

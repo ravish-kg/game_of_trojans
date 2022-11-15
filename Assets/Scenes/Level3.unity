@@ -809,6 +809,7 @@ MonoBehaviour:
   threshold_panel: {fileID: 1880681451}
   score_panel: {fileID: 1880681450}
   gameOver: {fileID: 1880681449}
+  nextLevelButton: {fileID: 1639254170}
 --- !u!114 &128613461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8035,6 +8036,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1639254170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6167207224732665098, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
+  m_PrefabInstance: {fileID: 2026005329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1672997736
 GameObject:
   m_ObjectHideFlags: 0
@@ -9718,6 +9724,10 @@ PrefabInstance:
     - target: {fileID: 6167207224732665098, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_Name
       value: Next Level Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167207224732665098, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6167207224732665099, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_Pivot.x

@@ -19,10 +19,12 @@ public class GameOver3 : MonoBehaviour
     private string objectd;
     private string BASE_URL="https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
     private int flag = 0;
+    public GameObject nextLevelButton;
 
     void Awake(){
         // Debug.Log("Awake");
         gameOverPanel.SetActive(false);
+        nextLevelButton.SetActive(false);
     }
 
     void Start() {
@@ -36,8 +38,8 @@ public class GameOver3 : MonoBehaviour
             if(scoreCalc.score >= int.Parse(Collision3.threshold)) {
                 gameOver.text = "Success! Level complete!";
                 equation_panel.text = "Equation: " + Collision3.math_eq;
-
-                if(GameOver.carryOverFlag){
+                nextLevelButton.SetActive(true);
+                if (GameOver.carryOverFlag){
                     GameOver.timeCarryOver = Timer3.sTime - Timer3.cTime;
                     if(GameOver.timeCarryOver <= 0){
                         GameOver.timeCarryOver = 0f;
@@ -94,6 +96,7 @@ public class GameOver3 : MonoBehaviour
         GameOpener.panel_counter = 0;
         entry_restart_condition = 1;
         NewTimer.exit_condition = 0;
+        nextLevelButton.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // SceneManager.LoadScene("Level1");
         scoreCalc.score = 0;
@@ -106,6 +109,7 @@ public class GameOver3 : MonoBehaviour
     }
 
     public void home() {
+
         gameOverPanel.SetActive(false);
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
@@ -113,6 +117,7 @@ public class GameOver3 : MonoBehaviour
         Collision3.count = 0;
         scoreCalc.score = 0;
         timeCarryOver = 0f;
+        nextLevelButton.SetActive(false);
         timeCarry.textTimeCarry = 0f;
         GameOver.timeCarryOver = 0f;
         carryOverFlag = false;
@@ -126,6 +131,7 @@ public class GameOver3 : MonoBehaviour
         SceneManager.LoadScene("Level1");
         scoreCalc.score = 0;
         Collision3.count = 0;
+        nextLevelButton.SetActive(false);
     }
 
     public void loadLevel2(){
@@ -134,6 +140,8 @@ public class GameOver3 : MonoBehaviour
         SceneManager.LoadScene("Level2_tutorial");
         scoreCalc.score = 0;
         Collision3.count = 0;
+        nextLevelButton.SetActive(false);
+
     }
 
     public void loadLevel3(){
@@ -142,6 +150,7 @@ public class GameOver3 : MonoBehaviour
         SceneManager.LoadScene("Level3_tutorial");
         scoreCalc.score = 0;
         Collision3.count = 0;
+        nextLevelButton.SetActive(false);
     }
 
     public void loadLevel4()
@@ -151,6 +160,7 @@ public class GameOver3 : MonoBehaviour
         SceneManager.LoadScene("Level4_tutorial");
         scoreCalc.score = 0;
         Collision3.count = 0;
+        nextLevelButton.SetActive(false);
     }
 
 }
