@@ -1642,7 +1642,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level2
+          m_StringArgument: Level2_tutorial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1303042937
@@ -2046,7 +2046,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level3
+          m_StringArgument: Level3_tutorial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1522736574
@@ -2180,7 +2180,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level4_set2
+          m_StringArgument: Level4_tutorial_set2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1529276628
@@ -2382,7 +2382,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level3_set2
+          m_StringArgument: Level3_tutorial_set2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1628969480
@@ -2516,7 +2516,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1_set2
+          m_StringArgument: Level1_tutorial_set2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1646207539
@@ -2650,7 +2650,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level4
+          m_StringArgument: Level4_tutorial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1723165038
