@@ -1001,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &313530258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 20
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 20
   hollowNumber: {fileID: 554161554}
   number: {fileID: 0}
   checkRotation: 0
@@ -3734,7 +3734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 10
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
@@ -3754,7 +3754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 10
   hollowNumber: {fileID: 901352828}
   number: {fileID: 0}
   checkRotation: 0
@@ -4536,7 +4536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 15
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
@@ -4556,7 +4556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 15
   hollowNumber: {fileID: 1478940361}
   number: {fileID: 0}
   checkRotation: 0
@@ -6882,7 +6882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 30
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
@@ -6902,7 +6902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 30
   hollowNumber: {fileID: 1272549857}
   number: {fileID: 0}
   checkRotation: 0
@@ -7069,7 +7069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 20
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
@@ -7089,7 +7089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 20
   hollowNumber: {fileID: 759615250}
   number: {fileID: 0}
   checkRotation: 0
@@ -7256,7 +7256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 25
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
@@ -7276,7 +7276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 25
   hollowNumber: {fileID: 846342027}
   number: {fileID: 0}
   checkRotation: 0
