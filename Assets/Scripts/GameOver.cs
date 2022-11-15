@@ -108,6 +108,7 @@ public class GameOver : MonoBehaviour
     }
 
     public void home() {
+        Debug.Log("Inside Home gameover");
         gameOverPanel.SetActive(false);
         nextLevelButton.SetActive(false);
         GameOpener.panel_counter = 0;
@@ -145,6 +146,16 @@ public class GameOver : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision.count = 0;
+    }
+
+    public void loadLevel1set2(){
+        rotation.isRotationCompleted = 0;
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
+        SceneManager.LoadScene("Level1_set2");
+        nextLevelButton.SetActive(false);
+        scoreCalc.score = 0;
+        Collision3.count = 0;
     }
 
 }
