@@ -302,6 +302,24 @@ public class GameOver3 : MonoBehaviour
         Collision3.count = 0;
     }
 
+    public void loadLevel3set2(){
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
+        SceneManager.LoadScene("Level3_set2");
+        nextLevelButton.SetActive(false);
+        scoreCalc.score = 0;
+        Collision3.count = 0;
+    }
+
+    public void loadLevel4set2(){
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
+        SceneManager.LoadScene("Level4_set2");
+        nextLevelButton.SetActive(false);
+        scoreCalc.score = 0;
+        Collision3.count = 0;
+    }
+
     public void loadLevel4(){
         rotation.isRotationCompleted = 0;
         GameOpener.panel_counter = 0;

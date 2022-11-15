@@ -48,7 +48,8 @@ public class Player4 : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        col.gameObject.CompareTag("Walls");
-        onGround = true;
+        if(col.gameObject.CompareTag("hwalls")) {
+            onGround = true;
+        }
     }
 }
