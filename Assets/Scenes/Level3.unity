@@ -803,12 +803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c910806425fb413c8766c055f3ad35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelButton: {fileID: 939730493}
-  gameOverPanel: {fileID: 1880681453}
-  equation_panel: {fileID: 1880681452}
-  threshold_panel: {fileID: 1880681451}
-  score_panel: {fileID: 1880681450}
-  gameOver: {fileID: 1880681449}
   block1: {fileID: 531719470}
   block2: {fileID: 1964121452}
   block3: {fileID: 966947475}
@@ -1750,7 +1744,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -2491,7 +2484,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -4107,7 +4099,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -4395,7 +4386,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -4436,11 +4426,6 @@ MonoBehaviour:
   hollowNumber: {fileID: 1028898569}
   number: {fileID: 0}
   checkRotation: 0
---- !u!1 &939730493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 722549645156543556, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
-  m_PrefabInstance: {fileID: 1091529103}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &964865656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,7 +4655,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -6004,7 +5988,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -9526,7 +9509,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 0}
@@ -9798,7 +9780,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -9864,7 +9845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167207224732665099, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6167207224732665099, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10417,7 +10398,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0

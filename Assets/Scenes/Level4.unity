@@ -2921,11 +2921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.b
-      value: 0.015686275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.g
-      value: 0.92156863
+      value: 0.64705884
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.r
@@ -3067,7 +3067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 15
   hollowNumber: {fileID: 146117469}
   number: {fileID: 0}
   checkRotation: 0
@@ -4879,7 +4879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 30
   hollowNumber: {fileID: 410782256}
   number: {fileID: 0}
   checkRotation: 0
@@ -8305,7 +8305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.g
-      value: 0.92156863
+      value: 0.64705884
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.r
@@ -8447,7 +8447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 30
   hollowNumber: {fileID: 127364944}
   number: {fileID: 0}
   checkRotation: 0
@@ -9000,11 +9000,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.b
-      value: 0.015686275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.g
-      value: 0.92156863
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304400665547667316, guid: fb0c1fe9b15dd45dda6a81c6c08369e5, type: 3}
       propertyPath: m_Color.r
@@ -9146,7 +9146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 30
   hollowNumber: {fileID: 1531753190}
   number: {fileID: 0}
   checkRotation: 0
@@ -10541,7 +10541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime1: 0
-  startTime1: 40
+  startTime1: 25
   hollowNumber: {fileID: 658059763}
   number: {fileID: 0}
   checkRotation: 0
