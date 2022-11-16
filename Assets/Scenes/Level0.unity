@@ -575,6 +575,8 @@ MonoBehaviour:
   threshold_panel: {fileID: 1232283766}
   score_panel: {fileID: 1968205638}
   gameOver: {fileID: 358093391}
+  level: 0
+  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!1 &152828241
 GameObject:
   m_ObjectHideFlags: 0

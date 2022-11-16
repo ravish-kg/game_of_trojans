@@ -168,6 +168,13 @@ public class GameOver3 : MonoBehaviour
     private string BASE_URL="https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
     private int flag = 0;
 
+
+    public LEVEL level;
+
+    private bool isScoreUpdated = false;
+
+    public ScoreManager scoreManager;
+
     void Awake(){
         gameOverPanel.SetActive(false);
     }
@@ -193,6 +200,15 @@ public class GameOver3 : MonoBehaviour
                     Debug.Log("Time Carry Over : " + timeCarryOver);
                     carryOverFlag = false;
                 }
+
+                 // Leaderboard score logic - STARTS
+                if(!isScoreUpdated) {
+                    // Need to change to take name as input... Should change savescore logic
+                    scoreManager.AddScore(new Score("rav", 3, level));
+                    scoreManager.SaveScore();
+                    isScoreUpdated = true;
+                }
+                // Leaderboard score logic - ENDS
             }
             else {
                 IEnumerator Post(string gameo, string objectd){
@@ -238,6 +254,7 @@ public class GameOver3 : MonoBehaviour
         timeCarryOver = 0f;
         carryOverFlag = false;
         rotation.isRotationCompleted = 0;
+        isScoreUpdated = false;
     }
 
     public void home() {
@@ -254,6 +271,7 @@ public class GameOver3 : MonoBehaviour
         timeCarry.textTimeCarry = 0f;
         GameOver.timeCarryOver = 0f;
         rotation.isRotationCompleted = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel1(){
@@ -263,6 +281,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel2(){
@@ -272,6 +291,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel3(){
@@ -281,6 +301,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel1set2(){
@@ -291,6 +312,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel2set2(){
@@ -300,6 +322,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel3set2(){
@@ -309,6 +332,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel4set2(){
@@ -318,6 +342,7 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
     }
 
     public void loadLevel4(){
@@ -328,6 +353,17 @@ public class GameOver3 : MonoBehaviour
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
+        isScoreUpdated = false;
+    }
+
+    public void openLeaderboard() {
+        GameOpener.panel_counter = 0;
+        NewTimer.exit_condition = 0;
+        SceneManager.LoadScene("Leaderboard");
+        nextLevelButton.SetActive(false);
+        scoreCalc.score = 0;
+        Collision1.count = 0;
+        isScoreUpdated = false;
     }
 
 }
