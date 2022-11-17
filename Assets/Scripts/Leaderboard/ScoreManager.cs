@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
 
     public IEnumerable<Score> GetHighScores()
     {
+        
         return sd.scores.OrderByDescending(x => x.score);
     }
 

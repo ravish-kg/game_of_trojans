@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreUi : MonoBehaviour
 {
     public RowUi rowUi;
     public ScoreManager scoreManager;
+
+    public Text titleText;
     
     void Start()
     {
@@ -18,6 +22,8 @@ public class ScoreUi : MonoBehaviour
             row.name.text = scores[i].name;
             row.score.text = scores[i].score.ToString();
         }
+
+        titleText.text = "LEADERBOARD 1";
     }
 }
 
