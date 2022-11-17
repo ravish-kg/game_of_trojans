@@ -77,7 +77,9 @@ public class GameOver1 : MonoBehaviour
                 // Leaderboard score logic - STARTS
                 if(!isScoreUpdated) {
                     // Need to change to take name as input... Should change savescore logic
-                    scoreManager.AddScore(new Score("rav", 3, level));                    
+                    float score = (float)System.Math.Round(Timer1.startingTime - Timer1.cTime, 2);
+                    string name = PlayerPrefs.GetString("playerName");
+                    scoreManager.AddScore(new Score(name, score, level));                    
                     scoreManager.SaveScore();
                     isScoreUpdated = true;
                 }

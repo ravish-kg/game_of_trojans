@@ -6,9 +6,11 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private ScoreData sd;
+    private ScoreData sd = new ScoreData();
+
     void Awake()
     {
+        Debug.Log("Inside Awake");
         var json = PlayerPrefs.GetString("scores", "{}");
         sd = JsonUtility.FromJson<ScoreData>(json);
     }
