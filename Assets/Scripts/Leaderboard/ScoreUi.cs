@@ -23,7 +23,7 @@ public class ScoreUi : MonoBehaviour
             row.score.text = scores[i].score.ToString();
         }
 
-        titleText.text = "LEADERBOARD 1";
+        //titleText.text = "LEADERBOARD 1";
     }
 }
 
