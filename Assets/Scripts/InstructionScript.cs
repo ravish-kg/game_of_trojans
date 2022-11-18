@@ -14,7 +14,9 @@ public class InstructionScript : MonoBehaviour
         GameOpener.panel_counter = 0;
         TutorialManager.popUpIndex = 0;
         NewTimer.exit_condition = 0;
-        PlayerPrefs.SetString("selectedLevel", Level);
-        SceneManager.LoadScene(scene_name);
+        
+        PlayerPrefs.SetString("selectedLevel", scene_name);
+
+        SceneManager.LoadScene("LeaderBoard");
     }
-}
+} 

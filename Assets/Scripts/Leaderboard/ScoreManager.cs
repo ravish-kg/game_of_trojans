@@ -17,8 +17,13 @@ public class ScoreManager : MonoBehaviour
 
     public IEnumerable<Score> GetHighScores()
     {
-        
-        return sd.scores.OrderByDescending(x => x.score);
+        string selectedLevel = PlayerPrefs.GetString("selectedLevel");
+
+        LEVEL level = (LEVEL)Enum.Parse(typeof(LEVEL), selectedLevel);
+
+        List<Score> filtered = sd.scores.FindAll(e => e.level == level);
+
+        return filtered.OrderByDescending(x => x.score);
     }
 
     public void AddScore(Score score)
