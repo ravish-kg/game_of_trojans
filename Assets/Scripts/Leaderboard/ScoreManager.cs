@@ -17,12 +17,21 @@ public class ScoreManager : MonoBehaviour
     public IEnumerable<Score> GetHighScores()
     {
         string selectedLevel = PlayerPrefs.GetString("selectedLevel");
+        string name = PlayerPrefs.GetString("playerName");
 
         LEVEL level = (LEVEL)Enum.Parse(typeof(LEVEL), selectedLevel);
+        
+        List<Score> result = sd.scores.FindAll(e => e.level == level).Take(10).ToList();
+        
+        bool isPresent = result.Exists(e => e.name.Equals(name));
 
-        List<Score> filtered = sd.scores.FindAll(e => e.level == level);
+        if(!isPresent) {
+            Score sc = sd.scores.Find(e => e.level == level && e.name == name);
+            if(sc != null)
+                result.Add(sc);
+        }
 
-        return filtered.OrderByDescending(x => x.score);
+        return result.OrderByDescending(x => -x.score);
     }
 
     public void AddScore(Score score)
