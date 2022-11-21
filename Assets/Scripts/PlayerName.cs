@@ -38,7 +38,7 @@ public class PlayerName : MonoBehaviour
             invalidText.text = "Name must have minimum 3 characters";
             return;
         }
-        else if(name.Length > 6){
+        else if(name.Length > 10){
             invalidText.text = "Name can have maximum 6 characters";
             return;
         }
