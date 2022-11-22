@@ -10,7 +10,7 @@ public class PlayerName : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public static string name = "vaibhav";
+    
 
     public Text inputText;
 
@@ -38,7 +38,7 @@ public class PlayerName : MonoBehaviour
             invalidText.text = "Name must have minimum 3 characters";
             return;
         }
-        else if(name.Length > 10){
+        else if(name.Length > 15){
             invalidText.text = "Name can have maximum 6 characters";
             return;
         }
