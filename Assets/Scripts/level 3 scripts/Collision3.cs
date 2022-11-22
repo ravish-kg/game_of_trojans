@@ -30,7 +30,7 @@ public class Collision3 : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         // time = Time.time + gap;
-        int temp = Random.Range(4, 5);
+        int temp = Random.Range(0, 5);
         pick = equation[temp];
         threshold = thresholdArr[temp];
         Equation.display = "Equation: " + pick;
