@@ -9,7 +9,11 @@ public enum LEVEL {
     LEVEL_1,
     LEVEL_2,
     LEVEL_3,
-    LEVEL_4
+    LEVEL_4,
+    LEVEL_1_SET2,
+    LEVEL_2_SET2,
+    LEVEL_3_SET2,
+    LEVEL_4_SET2,
 }
 
 public class GameOver1 : MonoBehaviour
