@@ -3573,6 +3573,8 @@ MonoBehaviour:
   threshold_panel: {fileID: 1130161521}
   score_panel: {fileID: 1130161520}
   gameOver: {fileID: 1130161519}
+  level: 6
+  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!114 &1122387608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,6 +3593,8 @@ MonoBehaviour:
   threshold_panel: {fileID: 1130161521}
   score_panel: {fileID: 1130161520}
   gameOver: {fileID: 1130161519}
+  level: 6
+  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!114 &1122387609
 MonoBehaviour:
   m_ObjectHideFlags: 0
