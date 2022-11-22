@@ -48,5 +48,7 @@ public class PlayerName : MonoBehaviour
         SceneManager.LoadScene("Menu");
 
         PlayerPrefs.SetString("playerName", name);
+
+        UnityEngine.PlayerPrefs.Save();
     }
 }

@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
 
         LEVEL level = (LEVEL)Enum.Parse(typeof(LEVEL), selectedLevel);
         
-        List<Score> result = sd.scores.FindAll(e => e.level == level).Take(10).ToList();
+        List<Score> result = sd.scores.FindAll(e => e.level == level);
         
         bool isPresent = result.Exists(e => e.name.Equals(name));
 
@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
                 result.Add(sc);
         }
 
-        return result.OrderByDescending(x => -x.score);
+        return result.OrderByDescending(x => -x.score).Take(10).ToList();
     }
 
     public void AddScore(Score score)
@@ -52,6 +52,7 @@ public class ScoreManager : MonoBehaviour
         var json = JsonUtility.ToJson(sd);
         Debug.Log(json);
         PlayerPrefs.SetString("scores", json);
+        UnityEngine.PlayerPrefs.Save();
     }
 }
 
