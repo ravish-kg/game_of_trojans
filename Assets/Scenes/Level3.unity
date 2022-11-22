@@ -791,6 +791,8 @@ MonoBehaviour:
   threshold_panel: {fileID: 1880681451}
   score_panel: {fileID: 1880681450}
   gameOver: {fileID: 1880681449}
+  level: 3
+  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!114 &128613461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,12 +805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c910806425fb413c8766c055f3ad35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelButton: {fileID: 939730493}
-  gameOverPanel: {fileID: 1880681453}
-  equation_panel: {fileID: 1880681452}
-  threshold_panel: {fileID: 1880681451}
-  score_panel: {fileID: 1880681450}
-  gameOver: {fileID: 1880681449}
   block1: {fileID: 531719470}
   block2: {fileID: 1964121452}
   block3: {fileID: 966947475}
@@ -1750,7 +1746,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -2491,7 +2486,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -4107,7 +4101,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -4395,7 +4388,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -4436,11 +4428,6 @@ MonoBehaviour:
   hollowNumber: {fileID: 1028898569}
   number: {fileID: 0}
   checkRotation: 0
---- !u!1 &939730493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 722549645156543556, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
-  m_PrefabInstance: {fileID: 1091529103}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &964865656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,7 +4657,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -5151,6 +5137,123 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.2, y: 4.2}
   m_EdgeRadius: 0
+--- !u!1001 &1071981844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1880681448}
+    m_Modifications:
+    - target: {fileID: 722549643602920654, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_Text
+      value: Leaderboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543554, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 128613460}
+    - target: {fileID: 722549645156543554, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: openLeaderboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543554, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameOver3, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543556, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_Name
+      value: Leaderboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543556, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 265.4742
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 71.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 370
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -376
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 722549645156543557, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1f2f9b9d3c59419cba907957d235141, type: 3}
 --- !u!1001 &1091529103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6004,7 +6107,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -9319,7 +9421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913878, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6247862864369913881, guid: 7837b32afae0041beb9db47c77bf3cb1, type: 3}
       propertyPath: m_Pivot.x
@@ -9525,7 +9627,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
@@ -9798,7 +9899,6 @@ MonoBehaviour:
   startTime1: 40
   hollowNumber: {fileID: 0}
   countdownText1: {fileID: 0}
-  countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0
   mazeChangeText: {fileID: 917901656}
@@ -9864,7 +9964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6167207224732665099, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6167207224732665099, guid: 1070166a5c7f44eabb04a36541a79bdf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10417,7 +10517,6 @@ MonoBehaviour:
   currentTime1: 0
   startTime1: 40
   hollowNumber: {fileID: 0}
-  countdownText1: {fileID: 0}
   countdownText1: {fileID: 0}
   number: {fileID: 0}
   checkRotation: 0

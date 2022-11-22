@@ -16,4 +16,4 @@ public class InstructionScript : MonoBehaviour
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene(scene_name);
     }
-}
+} 
