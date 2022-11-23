@@ -22,16 +22,19 @@ public class ScoreManager : MonoBehaviour
         LEVEL level = (LEVEL)Enum.Parse(typeof(LEVEL), selectedLevel);
         
         List<Score> result = sd.scores.FindAll(e => e.level == level);
-        
-        bool isPresent = result.Exists(e => e.name.Equals(name));
+
+        List<Score> top10 = result.OrderByDescending(x => -x.score).Take(10).ToList();
+
+        bool isPresent = top10.Exists(e => e.name.Equals(name));
 
         if(!isPresent) {
             Score sc = sd.scores.Find(e => e.level == level && e.name == name);
+            
             if(sc != null)
-                result.Add(sc);
+                top10.Add(sc);
         }
 
-        return result.OrderByDescending(x => -x.score).Take(10).ToList();
+        return top10;
     }
 
     public void AddScore(Score score)
