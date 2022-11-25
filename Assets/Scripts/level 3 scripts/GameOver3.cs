@@ -69,7 +69,7 @@
 //                 if(flag == 0) {
 //                     // Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+Collision3.threshold+"~Order$"+Collision3.count+"\n";
 //                     Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+Collision3.threshold+"~Order$"+Collision3.count+"~Level$"+SceneManager.GetActiveScene().name+"~Sessionid$"+Player.sessionid+"~Username$"+InstructionScript.uname+"\n";
-                    
+
 //                     StartCoroutine(Post(Gameo,""));
 //                     flag = 1;
 //                 }
@@ -165,7 +165,7 @@ public class GameOver3 : MonoBehaviour
     public Text gameOver;
     private string Gameo;
     private string objectd;
-    private string BASE_URL="https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
+    private string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
     private int flag = 0;
 
 
@@ -175,27 +175,34 @@ public class GameOver3 : MonoBehaviour
 
     public ScoreManager scoreManager;
 
-    void Awake(){
+    void Awake()
+    {
         gameOverPanel.SetActive(false);
     }
 
-    void Start() {
+    void Start()
+    {
         carryOverFlag = true;
     }
 
     // Update is called once per frame
-    void Update() {
-        if (Collision3.count == 3 || Timer3.currentTime == 0) {
+    void Update()
+    {
+        if (Collision3.count == 3 || Timer3.currentTime == 0)
+        {
             gameOverPanel.SetActive(true);
-            if(scoreCalc.score >= int.Parse(Collision3.threshold)) {
+            if (scoreCalc.score >= int.Parse(Collision3.threshold))
+            {
                 gameOver.text = "Success! Level complete!";
                 // equation_panel.text = "Equation: " + Collision3.math_eq;
                 equation_panel.text = Collision3.math_eq + " = " + scoreCalc.score;
                 nextLevelButton.SetActive(true);
 
-                if(carryOverFlag){
+                if (carryOverFlag)
+                {
                     timeCarryOver = Timer3.sTime - Timer3.cTime;
-                    if(timeCarryOver <= 0){
+                    if (timeCarryOver <= 0)
+                    {
                         timeCarryOver = 0f;
                     }
                     Debug.Log("Time Carry Over : " + timeCarryOver);
@@ -203,49 +210,56 @@ public class GameOver3 : MonoBehaviour
                 }
 
                 // Leaderboard score logic - STARTS
-                if(!isScoreUpdated) {
+                if (!isScoreUpdated)
+                {
                     // Need to change to take name as input... Should change savescore logic
                     float score = (float)System.Math.Round(Timer3.startingTime - Timer3.cTime, 2);
                     string name = PlayerPrefs.GetString("playerName");
-                    scoreManager.AddScore(new Score(name, score, level));                    
+                    scoreManager.AddScore(new Score(name, score, level));
                     scoreManager.SaveScore();
                     isScoreUpdated = true;
                 }
                 // Leaderboard score logic - ENDS
             }
-            else {
-                IEnumerator Post(string gameo, string objectd){
+            else
+            {
+                IEnumerator Post(string gameo, string objectd)
+                {
                     WWWForm form = new WWWForm();
-                    form.AddField("entry.230878790",gameo);
-                    form.AddField("entry.558777034",objectd);
+                    form.AddField("entry.230878790", gameo);
+                    form.AddField("entry.558777034", objectd);
 
-                    byte[] rawd= form.data;
+                    byte[] rawd = form.data;
                     WWW www = new WWW(BASE_URL, rawd);
                     yield return www;
 
                 }
-                if(flag == 0) {
-                    Gameo = "GameEnd~Timer-"+Time.time+"~equation-"+Equation.display+"~threshold-"+Collision3.threshold+"~Order-"+Collision3.count+"\n";
-                    StartCoroutine(Post(Gameo,""));
+                if (flag == 0)
+                {
+                    Gameo = "GameEnd~Timer-" + Time.time + "~equation-" + Equation.display + "~threshold-" + Collision3.threshold + "~Order-" + Collision3.count + "\n";
+                    StartCoroutine(Post(Gameo, ""));
                     flag = 1;
                 }
 
-                if (Timer3.currentTime == 0) {
+                if (Timer3.currentTime == 0)
+                {
                     gameOver.text = "Time's up! You Lost :(";
                     equation_panel.text = "Equation Incomplete";
                 }
-                else {
+                else
+                {
                     gameOver.text = "Game Over! You Lost :(";
                     // equation_panel.text = "Equation: " + Collision3.math_eq;
                     equation_panel.text = Collision3.math_eq + " = " + scoreCalc.score;
                 }
             }
-            threshold_panel.text = "Threshold: "+ Collision3.threshold;
+            threshold_panel.text = "Threshold: " + Collision3.threshold;
             score_panel.text = "Score: " + scoreCalc.score;
         }
     }
 
-    public void Restart() {
+    public void Restart()
+    {
         // Debug.Log(SceneManager.GetActiveScene().name);
         gameOverPanel.SetActive(false);
         nextLevelButton.SetActive(false);
@@ -261,7 +275,8 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void home() {
+    public void home()
+    {
         Debug.Log("Inside Home");
         gameOverPanel.SetActive(false);
         nextLevelButton.SetActive(false);
@@ -278,7 +293,8 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel1(){
+    public void loadLevel1()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level1");
@@ -288,7 +304,8 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel2(){
+    public void loadLevel2()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level2_tutorial");
@@ -298,7 +315,8 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel3(){
+    public void loadLevel3()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level3_tutorial");
@@ -308,18 +326,20 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel1set2(){
+    public void loadLevel1set2()
+    {
         rotation.isRotationCompleted = 0;
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
-        SceneManager.LoadScene("Level1_set2");
+        SceneManager.LoadScene("Level1_tutorial_set2");
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
         isScoreUpdated = false;
     }
 
-    public void loadLevel2set2(){
+    public void loadLevel2set2()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level2_set2");
@@ -329,27 +349,30 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel3set2(){
+    public void loadLevel3set2()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
-        SceneManager.LoadScene("Level3_set2");
+        SceneManager.LoadScene("Level3_tutorial_set2");
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
         isScoreUpdated = false;
     }
 
-    public void loadLevel4set2(){
+    public void loadLevel4set2()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
-        SceneManager.LoadScene("Level4_set2");
+        SceneManager.LoadScene("Level4_tutorial_set2");
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
         Collision3.count = 0;
         isScoreUpdated = false;
     }
 
-    public void loadLevel4(){
+    public void loadLevel4()
+    {
         rotation.isRotationCompleted = 0;
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
@@ -360,7 +383,8 @@ public class GameOver3 : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void openLeaderboard() {
+    public void openLeaderboard()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Leaderboard");
