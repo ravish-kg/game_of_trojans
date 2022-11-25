@@ -189,7 +189,8 @@ public class GameOver3 : MonoBehaviour
             gameOverPanel.SetActive(true);
             if(scoreCalc.score >= int.Parse(Collision3.threshold)) {
                 gameOver.text = "Success! Level complete!";
-                equation_panel.text = "Equation: " + Collision3.math_eq;
+                // equation_panel.text = "Equation: " + Collision3.math_eq;
+                equation_panel.text = Collision3.math_eq + " = " + scoreCalc.score;
                 nextLevelButton.SetActive(true);
 
                 if(carryOverFlag){
@@ -235,7 +236,8 @@ public class GameOver3 : MonoBehaviour
                 }
                 else {
                     gameOver.text = "Game Over! You Lost :(";
-                    equation_panel.text = "Equation: " + Collision3.math_eq;
+                    // equation_panel.text = "Equation: " + Collision3.math_eq;
+                    equation_panel.text = Collision3.math_eq + " = " + scoreCalc.score;
                 }
             }
             threshold_panel.text = "Threshold: "+ Collision3.threshold;

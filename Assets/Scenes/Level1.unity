@@ -5554,6 +5554,8 @@ MonoBehaviour:
   threshold_panel: {fileID: 1860919038}
   score_panel: {fileID: 1860919037}
   gameOver: {fileID: 1860919036}
+  level: 1
+  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!61 &1656210036
 BoxCollider2D:
   m_ObjectHideFlags: 0

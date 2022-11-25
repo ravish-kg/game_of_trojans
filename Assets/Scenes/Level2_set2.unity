@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &218218597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &667579628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3735,6 +3735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 0
   jumpSpeed: 8
+  gravityDown: 1
 --- !u!1001 &1130161517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5618,7 +5619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &1565198221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5805,7 +5806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &1582010579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7645,7 +7646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &2040063700
 MonoBehaviour:
   m_ObjectHideFlags: 0
