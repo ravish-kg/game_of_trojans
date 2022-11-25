@@ -53,6 +53,7 @@ public class TutorialLevel3 : MonoBehaviour
                 popUpIndex++;
                 popUps[popUpIndex].SetActive(true);
                 popUps[3].SetActive(false);
+                popUps[4].SetActive(true);
                 popUps[0].SetActive(false);
                 popUps[1].SetActive(false);
                 button.SetActive(true);
