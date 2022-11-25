@@ -3,21 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Text;
 
 public class ScoreManager : MonoBehaviour
 {
+    private string BASE_URL="https://game-of-trojans.wl.r.appspot.com";
+
     private ScoreData sd = new ScoreData();
 
     void Awake()
     {
-        var json = PlayerPrefs.GetString("scores", "{}");
-        sd = JsonUtility.FromJson<ScoreData>(json);
+    }
+
+    public async Task GetScores() {
+        using (var httpClient = new HttpClient())
+        {
+            var json = await httpClient.GetStringAsync(BASE_URL + "/");
+            sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(json);   
+        }
     }
 
     public IEnumerable<Score> GetHighScores()
     {
-        string selectedLevel = PlayerPrefs.GetString("selectedLevel");
-        string name = PlayerPrefs.GetString("playerName");
+        string selectedLevel = leaderboard_Instruction.levelName;
+        string name = PlayerName.playerName;
 
         LEVEL level = (LEVEL)Enum.Parse(typeof(LEVEL), selectedLevel);
         
@@ -37,12 +49,16 @@ public class ScoreManager : MonoBehaviour
         return top10;
     }
 
-    public void AddScore(Score score)
+    public async void AddScore(Score score)
     {
-        var json = PlayerPrefs.GetString("scores");
-        sd = JsonUtility.FromJson<ScoreData>(json);
-        sd.scores.Add(score);
-        Debug.Log(sd.scores);
+        using (var client = new HttpClient())
+        {
+            sd.scores.Add(score);
+            var json = JsonUtility.ToJson(sd);
+            Debug.Log(json);
+            var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
+            var result = await client.PostAsync(BASE_URL + "/", content);
+        }
     }
 
     private void OnDestroy()
@@ -52,10 +68,8 @@ public class ScoreManager : MonoBehaviour
 
     public void SaveScore()
     {
-        var json = JsonUtility.ToJson(sd);
-        Debug.Log(json);
-        PlayerPrefs.SetString("scores", json);
-        UnityEngine.PlayerPrefs.Save();
+        // var json = JsonUtility.ToJson(sd);
+        // Debug.Log(json);
     }
 }
 

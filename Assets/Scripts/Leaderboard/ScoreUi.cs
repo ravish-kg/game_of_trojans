@@ -12,8 +12,10 @@ public class ScoreUi : MonoBehaviour
 
     public Text titleText;
     
-    void Start()
+    async void Start()
     {
+        // Somehow this is working
+        await scoreManager.GetScores();
         var scores = scoreManager.GetHighScores().ToArray();
         for (int i = 0; i < scores.Length; i++)
         {

@@ -10,6 +10,7 @@ public class PlayerName : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public static string playerName;
     
 
     public Text inputText;
@@ -47,8 +48,6 @@ public class PlayerName : MonoBehaviour
         invalidText.text = "";
         SceneManager.LoadScene("Menu");
 
-        PlayerPrefs.SetString("playerName", name);
-
-        UnityEngine.PlayerPrefs.Save();
+        playerName = name;
     }
 }

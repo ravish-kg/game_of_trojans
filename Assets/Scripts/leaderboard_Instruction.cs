@@ -7,6 +7,7 @@ using System;
 public class leaderboard_Instruction : MonoBehaviour
 {
     public static string uname;
+    public static string levelName;
     public void btn_change_scene(string scene_name)
     {
         uname=Environment.UserName+Time.time;
@@ -15,7 +16,7 @@ public class leaderboard_Instruction : MonoBehaviour
         TutorialManager.popUpIndex = 0;
         NewTimer.exit_condition = 0;
         
-        PlayerPrefs.SetString("selectedLevel", scene_name);
+        levelName = scene_name;
 
         SceneManager.LoadScene("LeaderBoard");
     }
