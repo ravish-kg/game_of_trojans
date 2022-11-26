@@ -7,10 +7,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text;
+using System.IO;
 
 public class ScoreManager : MonoBehaviour
 {
-    private string BASE_URL="https://game-of-trojans.wl.r.appspot.com";
+    private string BASE_URL="https://game-of-trojans.wl.r.appspot.com/";
 
     private ScoreData sd = new ScoreData();
 
@@ -19,11 +20,16 @@ public class ScoreManager : MonoBehaviour
     }
 
     public async Task GetScores() {
-        using (var httpClient = new HttpClient())
-        {
-            var json = await httpClient.GetStringAsync(BASE_URL + "/");
-            sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(json);   
-        }
+        // using (var httpClient = new HttpClient())
+        // {
+        //     var json = await httpClient.GetStringAsync(BASE_URL);
+        //     sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(json);   
+        // }
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(BASE_URL));
+        HttpWebResponse response = (HttpWebResponse)(await request.GetResponseAsync());
+        StreamReader reader = new StreamReader(response.GetResponseStream());
+        string jsonResponse = reader.ReadToEnd();
+        sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(jsonResponse); 
     }
 
     public IEnumerable<Score> GetHighScores()
@@ -57,7 +63,7 @@ public class ScoreManager : MonoBehaviour
             var json = JsonUtility.ToJson(sd);
             Debug.Log(json);
             var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
-            var result = await client.PostAsync(BASE_URL + "/", content);
+            var result = await client.PostAsync(BASE_URL, content);
         }
     }
 
