@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &343074712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &950290959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4526,7 +4526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &1214320272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6872,7 +6872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &1825508546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7059,7 +7059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &1978454049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7246,7 +7246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  AnimationText: {fileID: 8666975960731682548, guid: 835dc4ae93afd48d296d247934ebf945, type: 3}
+  AnimationText: {fileID: 2996365389527199002, guid: 22950abd53c7b4bada41b9c26b3909f8, type: 3}
 --- !u!114 &1981935417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7431,7 +7431,7 @@ GameObject:
   - component: {fileID: 2101458499}
   m_Layer: 0
   m_Name: wall_large_horizontal_2
-  m_TagString: Walls
+  m_TagString: hwalls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
