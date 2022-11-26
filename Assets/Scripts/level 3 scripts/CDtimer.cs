@@ -30,7 +30,7 @@ public class CDtimer : MonoBehaviour
                 currentTime1 -= 1 * Time.deltaTime;
                 // countdownText1.text = currentTime1.ToString("0");
                 number.text = currentTime1.ToString("0");
-                if (currentTime1 <= 0)
+                if (currentTime1 < 1)
                 {
                     currentTime1 = 0;
                     // countdownText1.text = ""; 
