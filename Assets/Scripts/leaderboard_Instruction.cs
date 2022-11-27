@@ -18,6 +18,9 @@ public class leaderboard_Instruction : MonoBehaviour
         
         levelName = scene_name;
 
+        Debug.Log("Instructions");
+        Debug.Log(levelName);
+
         SceneManager.LoadScene("LeaderBoard");
     }
 

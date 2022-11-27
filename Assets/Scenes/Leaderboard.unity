@@ -435,8 +435,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rowUi: {fileID: 3486703431924651233, guid: 8cecb5c4bde594e00be696a39741c2a0, type: 3}
-  scoreManager: {fileID: 1337417961}
+  scoreManager: {fileID: 5697821905827566890, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
   titleText: {fileID: 0}
+--- !u!1001 &512814089
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 534046720400968290, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_Name
+      value: ScoreManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372294675345714334, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,17 +912,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1337417961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-  m_PrefabInstance: {fileID: 850712442482984282}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96818d3c5baa043a48a8cd6eb787a23d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1448707581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,60 +1320,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869414435}
   m_CullTransparentMesh: 0
---- !u!1001 &850712442482984282
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933170, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 850712443410933180, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
-      propertyPath: m_Name
-      value: ScoreManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 946ee560bf96449f38d138d623a1690b, type: 3}

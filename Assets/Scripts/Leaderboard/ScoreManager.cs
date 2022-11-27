@@ -9,27 +9,47 @@ using System.Threading.Tasks;
 using System.Text;
 using System.IO;
 
+using UnityEngine.Networking;
+
 public class ScoreManager : MonoBehaviour
 {
     private string BASE_URL="https://game-of-trojans.wl.r.appspot.com/";
 
     private ScoreData sd = new ScoreData();
 
-    void Awake()
-    {
+    public static bool gotData = false;
+
+    void Start() {
+        // Debug.Log("Start Score MAnageer");
+        // GetScores();
     }
 
-    public async Task GetScores() {
-        // using (var httpClient = new HttpClient())
-        // {
-        //     var json = await httpClient.GetStringAsync(BASE_URL);
-        //     sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(json);   
-        // }
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(BASE_URL));
-        HttpWebResponse response = (HttpWebResponse)(await request.GetResponseAsync());
-        StreamReader reader = new StreamReader(response.GetResponseStream());
-        string jsonResponse = reader.ReadToEnd();
-        sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(jsonResponse); 
+    public IEnumerator GetRequest(string uri)
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+        {
+            // Request and wait for the desired page.
+            yield return webRequest.SendWebRequest();
+
+            string[] pages = uri.Split('/');
+            int page = pages.Length - 1;
+
+            switch (webRequest.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                case UnityWebRequest.Result.DataProcessingError:
+                    Debug.LogError(pages[page] + ": Error: " + webRequest.error);
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
+                    break;
+                case UnityWebRequest.Result.Success:
+                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                    sd.scores = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Score>>(webRequest.downloadHandler.text);
+                    gotData = true;
+                    break;
+            }
+        }
     }
 
     public IEnumerable<Score> GetHighScores()
@@ -57,13 +77,51 @@ public class ScoreManager : MonoBehaviour
 
     public async void AddScore(Score score)
     {
-        using (var client = new HttpClient())
+        Debug.Log("AddScore");
+        // Debug.Log(sd.scores);
+
+        // using (var client = new HttpClient())
+        // {
+        //     sd.scores.Add(score);
+        //     var json = JsonUtility.ToJson(sd);
+        //     Debug.Log(json);
+        //     var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
+        //     var result = await client.PostAsync(BASE_URL, content);
+        // }
+        List<Score> temp = new List<Score>();
+        temp.Add(score);
+        var json = JsonUtility.ToJson(temp);
+        Debug.Log(json);
+        StartCoroutine(postRequest(BASE_URL, json));
+    }
+
+    public void addScoreToDB(Score score) {
+        List<Score> temp = new List<Score>();
+        temp.Add(score);
+        var json = JsonUtility.ToJson(temp);
+        StartCoroutine(postRequest(BASE_URL, json));
+    }
+
+    public IEnumerator postRequest(string url, string json)
+    {
+        Debug.Log("Post Request");
+        var uwr = new UnityWebRequest(url, "POST");
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        Debug.Log(jsonToSend);
+        uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        uwr.SetRequestHeader("Content-Type", "application/json");
+
+        //Send the request then wait here until it returns
+        yield return uwr.SendWebRequest();
+
+        if (uwr.isNetworkError)
         {
-            sd.scores.Add(score);
-            var json = JsonUtility.ToJson(sd);
-            Debug.Log(json);
-            var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
-            var result = await client.PostAsync(BASE_URL, content);
+            Debug.Log("Error While Sending: " + uwr.error);
+        }
+        else
+        {
+            Debug.Log("Received: " + uwr.downloadHandler.text);
         }
     }
 

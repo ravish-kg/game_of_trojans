@@ -611,7 +611,7 @@ MonoBehaviour:
   score_panel: {fileID: 1104915615}
   gameOver: {fileID: 1104915614}
   level: 5
-  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+  scoreManager: {fileID: 5697821905827566890, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!61 &255370145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
   score_panel: {fileID: 1104915615}
   gameOver: {fileID: 1104915614}
   level: 5
-  scoreManager: {fileID: 850712443410933171, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
+  scoreManager: {fileID: 5697821905827566890, guid: 946ee560bf96449f38d138d623a1690b, type: 3}
 --- !u!114 &255370152
 MonoBehaviour:
   m_ObjectHideFlags: 0
