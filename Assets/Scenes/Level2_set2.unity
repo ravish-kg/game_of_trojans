@@ -3548,6 +3548,7 @@ GameObject:
   - component: {fileID: 1122387609}
   - component: {fileID: 1122387607}
   - component: {fileID: 1122387614}
+  - component: {fileID: 1122387615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3736,6 +3737,25 @@ MonoBehaviour:
   onGround: 0
   jumpSpeed: 8
   gravityDown: 1
+--- !u!114 &1122387615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122387606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93866add85cd44f894ecdede25b4bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block1: {fileID: 1582010574}
+  block2: {fileID: 218218592}
+  block3: {fileID: 2040063695}
+  block4: {fileID: 1565198216}
+  block5: {fileID: 667579623}
+  popupCanvas: {fileID: 1456278498}
+  TimerCanvas: {fileID: 1714018113}
 --- !u!1001 &1130161517
 PrefabInstance:
   m_ObjectHideFlags: 0
