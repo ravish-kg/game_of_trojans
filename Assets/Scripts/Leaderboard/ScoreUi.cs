@@ -4,17 +4,40 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class ScoreUi : MonoBehaviour
 {
     public RowUi rowUi;
     public ScoreManager scoreManager;
 
-    public Text titleText;
+    private string BASE_URL="https://game-of-trojans.wl.r.appspot.com/";
     
-    void Start()
+    public Text titleText;
+
+    void Start() {
+        Debug.Log("Start");
+        ScoreManager.gotData = false;
+        StartCoroutine(scoreManager.GetRequest(BASE_URL));
+    }
+
+    void Update() {
+        if(ScoreManager.gotData) {
+            Debug.Log("In Update");
+            GetData();
+            ScoreManager.gotData = false;
+        }
+    }
+    
+    async Task GetData()
     {
+        Debug.Log("GetData");
+
         var scores = scoreManager.GetHighScores().ToArray();
+
+        Debug.Log("Scores");
+        Debug.Log(scores);
+
         for (int i = 0; i < scores.Length; i++)
         {
             var row = Instantiate(rowUi, transform).GetComponent<RowUi>();

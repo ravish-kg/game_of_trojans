@@ -166,6 +166,9 @@ public class GameOver3 : MonoBehaviour
     private string Gameo;
     private string objectd;
     private string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
+
+    private string SCORE_URL="https://game-of-trojans.wl.r.appspot.com/";
+
     private int flag = 0;
 
 
@@ -214,9 +217,15 @@ public class GameOver3 : MonoBehaviour
                 {
                     // Need to change to take name as input... Should change savescore logic
                     float score = (float)System.Math.Round(Timer3.startingTime - Timer3.cTime, 2);
-                    string name = PlayerPrefs.GetString("playerName");
-                    scoreManager.AddScore(new Score(name, score, level));
-                    scoreManager.SaveScore();
+                    string name = PlayerName.playerName;
+                    // scoreManager.AddScore(new Score(name, score, level));                    
+                    // scoreManager.SaveScore();
+                    ScoreData temp = new ScoreData();
+                    temp.scores.Add(new Score(name, score, level));
+                    var json = JsonUtility.ToJson(temp);
+                    Debug.Log(json);
+                    StartCoroutine(scoreManager.postRequest(SCORE_URL, json));
+
                     isScoreUpdated = true;
                 }
                 // Leaderboard score logic - ENDS
