@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 public class ScoreUi : MonoBehaviour
 {
     public RowUi rowUi;
+    
     public ScoreManager scoreManager;
 
     private string BASE_URL="https://game-of-trojans.wl.r.appspot.com/";
     
-    public Text titleText;
+    public Text playerRank;
 
     void Start() {
         Debug.Log("Start");
@@ -46,7 +47,18 @@ public class ScoreUi : MonoBehaviour
             row.score.text = scores[i].score.ToString();
         }
 
-        //titleText.text = "LEADERBOARD 1";
+        /*var temp1 = Instantiate(rowUi, transform).GetComponent<RowUi>();
+        temp1.rank.text = "";
+        temp1.name.text = "";
+        temp1.score.text = ""; 
+        var rowl = Instantiate(rowUi, transform).GetComponent<RowUi>();
+        rowl.rank.text = "";
+        rowl.name.text = yourRank.ToString();
+        rowl.score.text = ""; */
+
+        var yourRank = scoreManager.GetAllScores();
+        playerRank.text = yourRank;
+        
     }
 }
 
