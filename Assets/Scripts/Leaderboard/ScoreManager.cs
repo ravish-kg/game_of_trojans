@@ -52,6 +52,30 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public string GetAllScores(){
+        string selectedLevel = leaderboard_Instruction.levelName;
+        string name = PlayerName.playerName;
+        string uuidName = PlayerName.uname;
+
+        string res="";
+        
+
+        LEVEL level = (LEVEL)Enum.Parse(typeof(LEVEL), selectedLevel);
+        
+        List<Score> result = sd.scores.FindAll(e => e.level == level);
+
+        List<Score> rankAll = result.OrderByDescending(x => -x.score).ToList();
+
+        for(int i=0; i<rankAll.Count(); i++){
+            if(rankAll[i].uuid == uuidName){
+                res = "" + name + " ------ Your Rank : " + (i+1) + " ------ Time Taken : " + rankAll[i].score;
+            }
+            
+        }
+
+        return res;
+    }
+
     public IEnumerable<Score> GetHighScores()
     {
         string selectedLevel = leaderboard_Instruction.levelName;
@@ -61,16 +85,17 @@ public class ScoreManager : MonoBehaviour
         
         List<Score> result = sd.scores.FindAll(e => e.level == level);
 
+
         List<Score> top10 = result.OrderByDescending(x => -x.score).Take(10).ToList();
 
-        bool isPresent = top10.Exists(e => e.name.Equals(name));
+        // bool isPresent = top10.Exists(e => e.name.Equals(name));
 
-        if(!isPresent) {
-            Score sc = sd.scores.Find(e => e.level == level && e.name == name);
+        // if(!isPresent) {
+        //     Score sc = sd.scores.Find(e => e.level == level && e.name == name);
             
-            if(sc != null)
-                top10.Add(sc);
-        }
+        //     if(sc != null)
+        //         top10.Add(sc);
+        // }
 
         return top10;
     }

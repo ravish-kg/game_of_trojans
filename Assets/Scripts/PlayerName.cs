@@ -6,11 +6,14 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+
+
 public class PlayerName : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public static string playerName;
+    public static string uname;
     
 
     public Text inputText;
@@ -39,8 +42,8 @@ public class PlayerName : MonoBehaviour
             invalidText.text = "Name must have minimum 3 characters";
             return;
         }
-        else if(name.Length > 15){
-            invalidText.text = "Name can have maximum 6 characters";
+        else if(name.Length > 12){
+            invalidText.text = "Name can have maximum 12 characters";
             return;
         }
         Debug.Log(name);
@@ -49,5 +52,7 @@ public class PlayerName : MonoBehaviour
         SceneManager.LoadScene("Menu");
 
         playerName = name;
+        uname = name+Time.time;
+        Debug.Log(uname);
     }
 }
