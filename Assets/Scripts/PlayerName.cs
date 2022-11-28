@@ -6,11 +6,14 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+
+
 public class PlayerName : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public static string playerName;
+    public static string uname;
     
 
     public Text inputText;
@@ -49,5 +52,7 @@ public class PlayerName : MonoBehaviour
         SceneManager.LoadScene("Menu");
 
         playerName = name;
+        uname = name+Time.time;
+        Debug.Log(uname);
     }
 }

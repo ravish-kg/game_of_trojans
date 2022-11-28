@@ -74,10 +74,11 @@ public class GameOver : MonoBehaviour
                     // Need to change to take name as input... Should change savescore logic
                     float score = (float)System.Math.Round(Timer.startingTime - Timer.cTime, 2);
                     string name = PlayerName.playerName;
+                    string uuid = PlayerName.uname;
                     // scoreManager.AddScore(new Score(name, score, level));                    
                     // scoreManager.SaveScore();
                     ScoreData temp = new ScoreData();
-                    temp.scores.Add(new Score(name, score, level));
+                    temp.scores.Add(new Score(name, uuid, score, level));
                     var json = JsonUtility.ToJson(temp);
                     Debug.Log(json);
                     StartCoroutine(scoreManager.postRequest(SCORE_URL, json));

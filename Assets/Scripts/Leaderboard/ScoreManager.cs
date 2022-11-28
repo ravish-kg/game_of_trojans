@@ -55,6 +55,7 @@ public class ScoreManager : MonoBehaviour
     public string GetAllScores(){
         string selectedLevel = leaderboard_Instruction.levelName;
         string name = PlayerName.playerName;
+        string uuidName = PlayerName.uname;
 
         string res="";
         
@@ -66,7 +67,7 @@ public class ScoreManager : MonoBehaviour
         List<Score> rankAll = result.OrderByDescending(x => -x.score).ToList();
 
         for(int i=0; i<rankAll.Count(); i++){
-            if(rankAll[i].name == name){
+            if(rankAll[i].uuid == uuidName){
                 res = "" + name + " ------ Your Rank : " + (i+1) + " ------ Time Taken : " + rankAll[i].score;
             }
             
