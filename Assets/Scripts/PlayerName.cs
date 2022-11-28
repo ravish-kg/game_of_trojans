@@ -40,7 +40,7 @@ public class PlayerName : MonoBehaviour
             return;
         }
         else if(name.Length > 12){
-            invalidText.text = "Name can have maximum 6 characters";
+            invalidText.text = "Name can have maximum 12 characters";
             return;
         }
         Debug.Log(name);
