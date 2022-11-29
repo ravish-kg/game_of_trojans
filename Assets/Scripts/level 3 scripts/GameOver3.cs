@@ -151,9 +151,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class GameOver3 : MonoBehaviour
 {
+    public GameObject number1, number2, number3, rhs;
+    bool changepos = false;
     public static float timeCarryOver = 0f;
     public static bool carryOverFlag = false;
     public GameObject nextLevelButton;
@@ -167,7 +170,7 @@ public class GameOver3 : MonoBehaviour
     private string objectd;
     private string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
 
-    private string SCORE_URL="https://game-of-trojans.wl.r.appspot.com/";
+    private string SCORE_URL = "https://game-of-trojans.wl.r.appspot.com/";
 
     private int flag = 0;
 
@@ -185,6 +188,7 @@ public class GameOver3 : MonoBehaviour
 
     void Start()
     {
+        changepos = false;
         carryOverFlag = true;
     }
 
@@ -194,11 +198,34 @@ public class GameOver3 : MonoBehaviour
         if (Collision3.count == 3 || Timer3.currentTime == 0)
         {
             gameOverPanel.SetActive(true);
+            if (!changepos && (Collision3.temp == 0 || Collision3.temp == 4))
+            {
+                Vector3 pos1 = number1.GetComponent<RectTransform>().position;
+                pos1.x -= 10;
+                number1.GetComponent<RectTransform>().position = pos1;
+
+                Vector3 pos2 = number2.GetComponent<RectTransform>().position;
+                pos2.x += 22;
+                number2.GetComponent<RectTransform>().position = pos2;
+
+                Vector3 pos3 = number3.GetComponent<RectTransform>().position;
+                pos3.x -= 25;
+                number3.GetComponent<RectTransform>().position = pos3;
+
+                changepos = true;
+            }
+
             if (scoreCalc.score >= int.Parse(Collision3.threshold))
             {
+                string temps = Regex.Replace(Collision3.original_equation, @"_", "");
+                number1.GetComponent<Text>().text = Collision3.numbers_list[0];
+                number2.GetComponent<Text>().text = Collision3.numbers_list[1];
+                number3.GetComponent<Text>().text = Collision3.numbers_list[2];
+                rhs.GetComponent<Text>().text = scoreCalc.score.ToString();
+
                 gameOver.text = "Success! Level complete!";
                 // equation_panel.text = "Equation: " + Collision3.math_eq;
-                equation_panel.text = Collision3.math_eq + " = " + scoreCalc.score;
+                equation_panel.text = temps + " = ";
                 nextLevelButton.SetActive(true);
 
                 if (carryOverFlag)
@@ -258,9 +285,15 @@ public class GameOver3 : MonoBehaviour
                 }
                 else
                 {
+                    string temps = Regex.Replace(Collision3.original_equation, @"_", "");
+                    number1.GetComponent<Text>().text = Collision3.numbers_list[0];
+                    number2.GetComponent<Text>().text = Collision3.numbers_list[1];
+                    number3.GetComponent<Text>().text = Collision3.numbers_list[2];
+                    rhs.GetComponent<Text>().text = scoreCalc.score.ToString();
+
                     gameOver.text = "Game Over! You Lost :(";
                     // equation_panel.text = "Equation: " + Collision3.math_eq;
-                    equation_panel.text = Collision3.math_eq + " = " + scoreCalc.score;
+                    equation_panel.text = temps + " = ";
                 }
             }
             threshold_panel.text = "Threshold: " + Collision3.threshold;
@@ -400,7 +433,7 @@ public class GameOver3 : MonoBehaviour
         SceneManager.LoadScene("Leaderboard");
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
-        Collision1.count = 0;
+        Collision3.count = 0;
         isScoreUpdated = false;
     }
 

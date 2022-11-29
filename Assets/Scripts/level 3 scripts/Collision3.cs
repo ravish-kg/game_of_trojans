@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class Collision3 : MonoBehaviour
 {
     // public double gap = 7;
     // public double time = 7;
     int ct;
+    public static int temp;
+    public static string original_equation;
+    public static List<string> numbers_list = new List<string>();
     public static string number;
     public static int count = 0;
     // public GameObject hollowNumber;
@@ -17,7 +21,8 @@ public class Collision3 : MonoBehaviour
     Color red = new Color(1f,0f,0f,1f);
     Color orange = new Color(1f,165f/255f,0f,1f);
     Color yellow = new Color(1f,235f/255f,4f/255f,1f);
-    string[] equation = { "_ + ( _ * _ )", "( _ * _ ) + _ ", "( _ / _ ) + _", "_ + _ - _", "_ * ( _ / _ )" };
+    // string[] equation = { "_ + ( _ * _ )", "( _ * _ ) + _ ", "( _ / _ ) + _", "_ + _ - _", "_ * ( _ / _ )" };
+    string[] equation = { "   _   +  (  _    *    _  )", "(  _    *    _  )  +   _   ", "(  _    /    _  )  +   _   ", "(  _    +    _  )  -   _   ", "   _   *  (  _    /    _  )" };
     string[] thresholdArr = { "300", "300", "30", "50", "150" };
     public static string pick;
     public static string threshold;
@@ -29,11 +34,13 @@ public class Collision3 : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        numbers_list.Clear();
         // time = Time.time + gap;
-        int temp = Random.Range(0, 5);
+        temp = Random.Range(0, 5);
         pick = equation[temp];
         threshold = thresholdArr[temp];
-        Equation.display = "Equation: " + pick;
+        original_equation = pick;
+        Equation.display = "Equation: " + Regex.Replace(pick, @"\s+", " ");
     }
 
     // Update is called once per frame
@@ -82,6 +89,7 @@ public class Collision3 : MonoBehaviour
             Destroy (clone, 1.0f);
             // Instantiate(hollowNumber, transform.position, Quaternion.identity);
             string num = Collision3.number;
+            numbers_list.Add(num);
             index = Equation.display.IndexOf("_");
             Equation.display = Equation.display.Substring(0, index) + num + Equation.display.Substring(index + 1);
             

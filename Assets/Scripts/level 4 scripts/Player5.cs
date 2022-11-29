@@ -47,7 +47,7 @@ public class Player5 : MonoBehaviour
                     {
                         player.velocity = new Vector2(player.velocity.x, -1 * jumpSpeed);
                     }
-                    onGround = false;
+                    // onGround = false;
                 }
             }
 
@@ -62,10 +62,16 @@ public class Player5 : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        col.gameObject.CompareTag("Walls");
-        onGround = true;
+    void OnCollisionStay2D(Collision2D col) {
+        if (col.gameObject.CompareTag("hwalls")) {
+            onGround = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D col) {
+        if(col.gameObject.CompareTag("hwalls")) {
+            onGround = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

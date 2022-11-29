@@ -4,12 +4,16 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class Collision1 : MonoBehaviour
 {
     // public double gap = 7;
     // public double time = 7;
     int ct;
+    public static int temp;
+    public static string original_equation;
+    public static List<string> numbers_list = new List<string>();
     public static string number;
     public static int count = 0;
     // public GameObject hollowNumber;
@@ -18,7 +22,8 @@ public class Collision1 : MonoBehaviour
     Color red = new Color(1f, 0f, 0f, 1f);
     Color orange = new Color(1f, 165f / 255f, 0f, 1f);
     Color yellow = new Color(1f, 235f / 255f, 4f / 255f, 1f);
-    string[] equation = { "_ + ( _ * _ )", "( _ * _ ) + _ ", "( _ / _ ) + _", "_ + _ - _", "_ * ( _ / _ )" };
+    // string[] equation = { "_ + ( _ * _ )", "( _ * _ ) + _ ", "( _ / _ ) + _", "_ + _ - _", "_ * ( _ / _ )" };
+    string[] equation = { "   _   +  (  _    *    _  )", "(  _    *    _  )  +   _   ", "(  _    /    _  )  +   _   ", "(  _    +    _  )  -   _   ", "   _   *  (  _    /    _  )" };
     string[] thresholdArr = { "1300", "1300", "30", "60", "150" };
     
 
@@ -41,7 +46,7 @@ public class Collision1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        numbers_list.Clear();
         Scene scene = SceneManager.GetActiveScene();
         Debug.Log("****");
         Debug.Log(scene.name);
@@ -49,20 +54,19 @@ public class Collision1 : MonoBehaviour
         if (scene.name == "Level0")
         {
             string[] thresholdArr = { "1300", "1300", "30", "60", "150" };
-            int temp = Random.Range(0, 5);
+            temp = Random.Range(0, 5);
             pick = equation[temp];
             threshold = thresholdArr[temp];
         }
         else if (scene.name == "Level1")
         {
             string[] thresholdArr = { "300", "300", "20", "35", "100" };
-            int temp = Random.Range(1, 3);
+            temp = Random.Range(1, 3);
             pick = equation[temp];
             threshold = thresholdArr[temp];
         }
-
-        Equation.display = "Equation: " + pick;
-
+        original_equation = pick;
+        Equation.display = "Equation: " + Regex.Replace(pick, @"\s+", " ");
     }
 
     // Update is called once per frame
@@ -131,6 +135,7 @@ public class Collision1 : MonoBehaviour
             // Destroy(clone, 1.0f);
             // Instantiate(hollowNumber, transform.position, Quaternion.identity);
             string num = Collision1.number;
+            numbers_list.Add(num);
             index = Equation.display.IndexOf("_");
             Equation.display = Equation.display.Substring(0, index) + num + Equation.display.Substring(index + 1);
 
