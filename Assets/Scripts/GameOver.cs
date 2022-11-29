@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class GameOver : MonoBehaviour
 {
+    public GameObject number1, number2, number3, rhs;
+    bool changepos = false;
     public static float timeCarryOver = 0f;
     public static bool carryOverFlag = false;
 
@@ -19,9 +22,9 @@ public class GameOver : MonoBehaviour
     public Text gameOver;
     private string Gameo;
     private string objectd;
-    private string BASE_URL="https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
+    private string BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe9yNVWR0ab2MrXVYWYKbxWDa_rYX-YvVdmvteH6DTe190ifw/formResponse";
 
-    private string SCORE_URL="https://game-of-trojans.wl.r.appspot.com/";
+    private string SCORE_URL = "https://game-of-trojans.wl.r.appspot.com/";
 
     private int flag = 0;
 
@@ -31,38 +34,70 @@ public class GameOver : MonoBehaviour
 
     public ScoreManager scoreManager;
 
-    void Awake(){
-        // Debug.Log("Awake");
+    void Awake()
+    {
         gameOverPanel.SetActive(false);
-        
     }
 
-    void Start() {
+    void Start()
+    {
+        changepos = false;
         carryOverFlag = true;
     }
 
     // Update is called once per frame
-    void Update() {
-        if (Collision.count == 3 || Timer.currentTime == 0) {
+    void Update()
+    {
+        if (Collision.count == 3 || Timer.currentTime == 0)
+        {
             gameOverPanel.SetActive(true);
-            if(scoreCalc.score >= int.Parse(Collision.threshold)) {
+            if (!changepos && (Collision.temp == 0 || Collision.temp == 4))
+            {
+                Vector3 pos1 = number1.GetComponent<RectTransform>().position;
+                pos1.x -= 10;
+                number1.GetComponent<RectTransform>().position = pos1;
+
+                Vector3 pos2 = number2.GetComponent<RectTransform>().position;
+                pos2.x += 22;
+                number2.GetComponent<RectTransform>().position = pos2;
+
+                Vector3 pos3 = number3.GetComponent<RectTransform>().position;
+                pos3.x -= 25;
+                number3.GetComponent<RectTransform>().position = pos3;
+
+                changepos = true;
+            }
+
+            if (scoreCalc.score >= int.Parse(Collision.threshold))
+            {
+                string temps = Regex.Replace(Collision.original_equation, @"_", "");
+                number1.GetComponent<Text>().text = Collision.numbers_list[0];
+                number2.GetComponent<Text>().text = Collision.numbers_list[1];
+                number3.GetComponent<Text>().text = Collision.numbers_list[2];
+                rhs.GetComponent<Text>().text = scoreCalc.score.ToString();
+
                 gameOver.text = "Success! Level complete!";
                 // equation_panel.text = "Equation: " + Collision.math_eq;
-                equation_panel.text = Collision.math_eq + " = " + scoreCalc.score;
+                equation_panel.text = temps + " = ";
                 nextLevelButton.SetActive(true);
 
-                if(carryOverFlag){
+                if (carryOverFlag)
+                {
                     timeCarryOver = Timer.sTime - Timer.cTime;
-                    if(timeCarryOver <= 0){
+                    if (timeCarryOver <= 0)
+                    {
                         timeCarryOver = 0f;
                     }
-                    else if(timeCarryOver < 10){
+                    else if (timeCarryOver < 10)
+                    {
                         timeCarryOver = 5f;
                     }
-                    else if(timeCarryOver < 20){
+                    else if (timeCarryOver < 20)
+                    {
                         timeCarryOver = 3f;
                     }
-                    else{
+                    else
+                    {
                         timeCarryOver = 2f;
                     }
                     Debug.Log("Time Carry Over : " + timeCarryOver);
@@ -70,7 +105,8 @@ public class GameOver : MonoBehaviour
                 }
 
                 // Leaderboard score logic - STARTS
-                if(!isScoreUpdated) {
+                if (!isScoreUpdated)
+                {
                     // Need to change to take name as input... Should change savescore logic
                     float score = (float)System.Math.Round(Timer.startingTime - Timer.cTime, 2);
                     string name = PlayerName.playerName;
@@ -87,40 +123,52 @@ public class GameOver : MonoBehaviour
                 }
                 // Leaderboard score logic - ENDS
             }
-            else {
-                IEnumerator Post(string gameo, string objectd){
+            else
+            {
+                IEnumerator Post(string gameo, string objectd)
+                {
                     WWWForm form = new WWWForm();
-                    form.AddField("entry.230878790",gameo);
-                    form.AddField("entry.558777034",objectd);
+                    form.AddField("entry.230878790", gameo);
+                    form.AddField("entry.558777034", objectd);
 
-                    byte[] rawd= form.data;
+                    byte[] rawd = form.data;
                     WWW www = new WWW(BASE_URL, rawd);
                     yield return www;
 
                 }
-                if(flag == 0) {
+                if (flag == 0)
+                {
                     // Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+Collision.threshold+"~Order$"+Collision.count+"\n";
-                    Gameo = "GameEnd~Timer$"+Time.time+"~equation$"+Equation.display+"~threshold$"+Collision.threshold+"~Order$"+Collision.count+"~Level$"+SceneManager.GetActiveScene().name+"~Sessionid$"+Player.sessionid+"~Username$"+InstructionScript.uname+"\n";
-                    StartCoroutine(Post(Gameo,""));
+                    Gameo = "GameEnd~Timer$" + Time.time + "~equation$" + Equation.display + "~threshold$" + Collision.threshold + "~Order$" + Collision.count + "~Level$" + SceneManager.GetActiveScene().name + "~Sessionid$" + Player.sessionid + "~Username$" + InstructionScript.uname + "\n";
+                    StartCoroutine(Post(Gameo, ""));
                     flag = 1;
                 }
 
-                if (Timer.currentTime == 0) {
+                if (Timer.currentTime == 0)
+                {
                     gameOver.text = "Time's up! You Lost :(";
                     equation_panel.text = "Equation Incomplete";
                 }
-                else {
+                else
+                {
+                    string temps = Regex.Replace(Collision.original_equation, @"_", "");
+                    number1.GetComponent<Text>().text = Collision.numbers_list[0];
+                    number2.GetComponent<Text>().text = Collision.numbers_list[1];
+                    number3.GetComponent<Text>().text = Collision.numbers_list[2];
+                    rhs.GetComponent<Text>().text = scoreCalc.score.ToString();
+
                     gameOver.text = "Game Over! You Lost :(";
                     // equation_panel.text = "Equation: " + Collision.math_eq;
-                    equation_panel.text = Collision.math_eq + " = " + scoreCalc.score;
+                    equation_panel.text = temps + " = ";
                 }
             }
-            threshold_panel.text = "Threshold: "+ Collision.threshold;
+            threshold_panel.text = "Threshold: " + Collision.threshold;
             score_panel.text = "Score: " + scoreCalc.score;
         }
     }
 
-    public void Restart() {
+    public void Restart()
+    {
         Debug.Log(SceneManager.GetActiveScene().name);
         nextLevelButton.SetActive(false);
         gameOverPanel.SetActive(false);
@@ -137,7 +185,8 @@ public class GameOver : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void home() {
+    public void home()
+    {
         Debug.Log("Inside Home gameover");
         gameOverPanel.SetActive(false);
         nextLevelButton.SetActive(false);
@@ -152,7 +201,8 @@ public class GameOver : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel1(){
+    public void loadLevel1()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level1");
@@ -161,7 +211,8 @@ public class GameOver : MonoBehaviour
         Collision.count = 0;
         isScoreUpdated = false;
     }
-    public void loadLevel2(){
+    public void loadLevel2()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level2_tutorial");
@@ -171,7 +222,8 @@ public class GameOver : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel3(){
+    public void loadLevel3()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Level3_tutorial");
@@ -181,7 +233,8 @@ public class GameOver : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void loadLevel1set2(){
+    public void loadLevel1set2()
+    {
         rotation.isRotationCompleted = 0;
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
@@ -192,13 +245,14 @@ public class GameOver : MonoBehaviour
         isScoreUpdated = false;
     }
 
-    public void openLeaderboard() {
+    public void openLeaderboard()
+    {
         GameOpener.panel_counter = 0;
         NewTimer.exit_condition = 0;
         SceneManager.LoadScene("Leaderboard");
         nextLevelButton.SetActive(false);
         scoreCalc.score = 0;
-        Collision1.count = 0;
+        Collision.count = 0;
         isScoreUpdated = false;
     }
 
