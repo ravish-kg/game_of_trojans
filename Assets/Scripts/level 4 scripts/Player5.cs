@@ -10,53 +10,40 @@ public class Player5 : MonoBehaviour
     private float direction = 0f;
     public float jumpSpeed = 8.0f;
     public bool gravityDown = true;
-    // public Vector2 movement = new Vector2();
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         onGround = true;
         player = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (NewTimer.exit_condition == 1)
-        {
+    void Update() {
+        if (NewTimer.exit_condition == 1) {
             direction = Input.GetAxisRaw("Horizontal");
 
-            if (direction != 0f)
-            {
+            if (direction != 0f) {
                 player.velocity = new Vector2(direction * speed, player.velocity.y);
             }
-            else
-            {
+            else {
                 player.velocity = new Vector2(0, player.velocity.y);
             }
 
-            if (onGround)
-            {
-                if (Input.GetButtonDown("Jump"))
-                {
-                    if (player.gravityScale == 1)
-                    {
+            if (onGround) {
+                if (Input.GetButtonDown("Jump")) {
+                    if (player.gravityScale == 1) {
                         player.velocity = new Vector2(player.velocity.x, jumpSpeed);
                     }
-                    else
-                    {
+                    else {
                         player.velocity = new Vector2(player.velocity.x, -1 * jumpSpeed);
                     }
-                    // onGround = false;
                 }
             }
 
-            if (direction >= 0f)
-            {
+            if (direction >= 0f) {
                 transform.localScale = new Vector2(0.05833428f, 0.06382877f);
             }
-            else
-            {
+            else {
                 transform.localScale = new Vector2(-0.05833428f, 0.06382877f);
             }
         }
@@ -74,22 +61,17 @@ public class Player5 : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.tag == "Darkboxes")
-        {
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.tag == "Darkboxes") {
             player.gravityScale = -1;
-            if (gravityDown == true)
-            {
+            if (gravityDown == true) {
                 gravityDown = false;
                 gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y + 180, gameObject.transform.eulerAngles.z + 180);
             }
         }
-        else if (col.tag == "LightBoxes")
-        {
+        else if (col.tag == "LightBoxes") {
             player.gravityScale = 1;
-            if (gravityDown == false)
-            {
+            if (gravityDown == false) {
                 gravityDown = true;
                 gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y + 180, gameObject.transform.eulerAngles.z + 180);
             }
