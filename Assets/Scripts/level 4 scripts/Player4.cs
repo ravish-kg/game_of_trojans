@@ -9,7 +9,6 @@ public class Player4 : MonoBehaviour
     private Rigidbody2D player;
     private float direction = 0f;
     public float jumpSpeed = 8.0f;
-    // public Vector2 movement = new Vector2();
 
     // Start is called before the first frame update
     void Start() {
@@ -19,8 +18,7 @@ public class Player4 : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (NewTimer.exit_condition == 1)
-        {
+        if (NewTimer.exit_condition == 1) {
             direction = Input.GetAxisRaw("Horizontal");
             
             if (direction != 0f) {
@@ -33,17 +31,8 @@ public class Player4 : MonoBehaviour
             if(onGround) {
                 if(Input.GetButtonDown("Jump")) {
                     player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-                    // onGround = false;
                 }
             }
-
-            // direction = Input.GetAxis("Horizontal");
-            // if (direction >= 0f) {
-            //     transform.localScale = new Vector2(0.05833428f, 0.06382877f);
-            // }
-            // else {
-            //     transform.localScale = new Vector2(-0.05833428f, 0.06382877f);
-            // }
         }
     }
 

@@ -33,27 +33,25 @@ public class rotation : MonoBehaviour
             rot_elapsedTime += Time.deltaTime;
             yield return null;
         }
+        transform.rotation = Quaternion.Euler(0, 0, 180);
         isRotationCompleted = 1;
-        // Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
         player.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (NewTimer.exit_condition==1) {
+        if (NewTimer.exit_condition == 1)
+        {
 
-            if(!checkInitialTime) {
+            if (!checkInitialTime)
+            {
                 time2 = Time.time + gap;
                 checkInitialTime = true;
             }
 
             if (Time.time >= time2 && !isRotating && Collision3.count < 3)
             {
-                // x = player.transform.position.x;
-                // y = player.transform.position.y;
-                // z = player.transform.position.z;
-                // Destroy(player);
                 player.SetActive(false);
                 isRotating = true;
                 StartCoroutine("rotateOBJ");

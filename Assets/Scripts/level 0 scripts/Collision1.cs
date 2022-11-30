@@ -11,6 +11,8 @@ public class Collision1 : MonoBehaviour
     // public double gap = 7;
     // public double time = 7;
     int ct;
+    private ParticleSystem particle;
+    private BoxCollider2D bc;
     public static int temp;
     public static string original_equation;
     public static List<string> numbers_list = new List<string>();
@@ -69,6 +71,13 @@ public class Collision1 : MonoBehaviour
         Equation.display = "Equation: " + Regex.Replace(pick, @"\s+", " ");
     }
 
+    void Awake() {
+        particle = gameObject.GetComponentInChildren<ParticleSystem>();
+        c = gameObject.GetComponent<SpriteRenderer>();
+        bc = gameObject.GetComponent<BoxCollider2D>();
+        
+
+    }	
     // Update is called once per frame
     void Update()
     {
@@ -95,7 +104,13 @@ public class Collision1 : MonoBehaviour
         //     time = Time.time + gap;
         // }
     }
-
+    private IEnumerator Break(){
+            particle.Play();
+            c.enabled = false;
+            bc.enabled = false;
+            yield return new WaitForSeconds(particle.main.startLifetime.constantMax);
+            Destroy(gameObject);
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
@@ -105,8 +120,9 @@ public class Collision1 : MonoBehaviour
 
             ct = int.Parse(counterText.text);
             count++;
-            c = gameObject.GetComponent<SpriteRenderer>();
-            Destroy(gameObject);
+            StartCoroutine(Break());
+            // c = gameObject.GetComponent<SpriteRenderer>();
+            // Destroy(gameObject);
             // if (blockType == TIMER_COLOR.YELLOW)
             // {
                 // number = Random.Range(1, 11).ToString();
